@@ -4,20 +4,28 @@ import Resource from './Resource';
 
 const ShowCat = () => {
     const navigate = useNavigate();
-    const webURL = 'https://api.thecatapi.com/v1/images/search/?limit=15&page=100&order=DESC';
+    const webURL = 'https://api.thecatapi.com/v1/images/search?include_breeds=true&limit=15';
 
     const render = (data) => {
-        if (data.loading) return <p>Loading...</p>;
-        if (data.error) return <p>Error: {data.error}</p>;
+        if (data.loading) {
+            return <p className="loading">Loading...</p>;
+        }
+        if (data.error) {
+            return <p className="error">Error: {data.error}</p>;
+        }
 
         return data.trans.map(cat => (
             <div key={cat.id} className='cat-container'>
                 <img 
                     className='image' 
                     src={cat.url} 
-                    alt='A cute cat' 
-                    onClick={() => navigate(`/adoptcat?image=${encodeURIComponent(cat.url)}`)} // Navigate to new page
+                    alt={`A cute ${cat.breeds && cat.breeds.length > 0 ? cat.breeds[0].name : 'unknown breed'} cat`} 
+                    onClick={() => {
+                        const breedName = cat.breeds && cat.breeds.length > 0 ? cat.breeds[0].name : 'Unknown';
+                        navigate(`/adoptcat?image=${encodeURIComponent(cat.url)}&breed=${encodeURIComponent(breedName)}`);
+                    }} 
                 />
+                <p>Breed: {cat.breeds && cat.breeds.length > 0 ? cat.breeds[0].name : 'Unknown'}</p>
             </div>
         ));
     };

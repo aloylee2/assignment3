@@ -144,6 +144,20 @@
     object-fit: cover;
     margin: 0.5rem;
   }
+  .dog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+    margin: 10px; /* Add some space around each dog container */
+}
+
+
+.breed-name {
+    text-align: center; /* Center the text */
+    margin-top: 8px; /* Add space above the breed name */
+    font-size: 1.2rem; /* Adjust font size as needed */
+    font-weight: bold; /* Make the breed name bold */
+}
   
   
   @media (max-width: 992px) {

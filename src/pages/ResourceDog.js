@@ -1,25 +1,31 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Resource from './Resource' // Ensure this is the correct path
+import Resource from './Resource'; // Ensure this is the correct path
 
 const ShowDog = () => {
     const navigate = useNavigate();
     const webURL = 'https://dog.ceo/api/breeds/image/random/12';
 
-    const render = (data) => {
-        if (data.loading) return <p>Loading...</p>;
-        if (data.error) return <p>Error: {data.error}</p>;
+    const render = ({ loading, error, trans }) => {
+        if (loading) return <p>Loading...</p>;
+        if (error) return <p>Error: {error}</p>;
 
-        return data.trans.message.map((dogUrl, index) => (
-            <div key={index} className='dog-container'>
-                <img 
-                    className='image' 
-                    src={dogUrl} 
-                    alt='dog img' 
-                    onClick={() => navigate(`/adoptdog?image=${encodeURIComponent(dogUrl)}`)} 
-                />
-            </div>
-        ));
+        return trans.message.map((dogUrl) => {
+            // Extract breed name from the URL
+            const breedName = dogUrl.split('/')[4]; // Adjust based on the actual URL structure
+
+            return (
+                <div key={dogUrl} className='dog-container'>
+                    <img 
+                        className='image' 
+                        src={dogUrl} 
+                        alt={`A cute ${breedName}`} 
+                        onClick={() => navigate(`/adoptdog?image=${encodeURIComponent(dogUrl)}&breed=${encodeURIComponent(breedName)}`)} 
+                    />
+                    <p className='breed-name'>{breedName.charAt(0).toUpperCase() + breedName.slice(1).replace('-', ' ')}</p>
+                </div>
+            );
+        });
     };
 
     return (
