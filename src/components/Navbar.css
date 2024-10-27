@@ -1,0 +1,65 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Dark background for the navbar */
+    padding: 10px 20px; /* Spacing around the navbar */
+}
+
+.navbar h2 {
+    color: #fff; /* White text for the title */
+    margin: 0; /* Remove default margin */
+}
+
+.navbar ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Use flexbox for the list */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar li {
+    position: relative; /* For dropdown positioning */
+}
+
+.navbar a {
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 15px; /* Spacing around links */
+    display: block; /* Make links block-level for better hit area */
+}
+
+.navbar a:hover {
+    background-color: #555; /* Darken background on hover */
+}
+
+.dropdown-menu {
+    display: block; /* Ensure dropdown is block-level */
+    position: absolute; /* Position dropdown relative to the parent li */
+    top: 100%; /* Align it below the parent */
+    left: 0; /* Align to the left */
+    background-color: #444; /* Dark background for dropdown */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.dropdown-menu a {
+    padding: 10px 15px; /* Spacing for dropdown links */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.dropdown-menu a:hover {
+    background-color: #555; /* Darken dropdown item on hover */
+}
+
+.logout-button {
+    background-color: #e74c3c; /* Red background for logout button */
+    color: #fff; /* White text for button */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Spacing for button */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.logout-button:hover {
+    background-color: #c0392b; /* Darken button on hover */
+}

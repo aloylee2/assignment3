@@ -1,20 +1,35 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Register from './components/Register';
-import Login from './components/Login';
-import Home from './components/Home';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
+
+  const handleLogin = (username) => {
+    setLoggedIn(true);
+    // Additional login logic here
+    setUsername(username); 
+  };
+  
+  const handleLogout = () => {
+    setLoggedIn(false);
+    setUsername('');
+  };
 
   return (
     <Router>
+       <Navbar isLoggedIn={loggedIn} handleLogout={handleLogout} />
+      <div className="container">
       <Routes>
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={loggedIn ? <Navigate to="/home" /> : <Login setLoggedIn={setLoggedIn} />} />
-        <Route path="/home" element={loggedIn ? <Home /> : <Navigate to="/login" />} />
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route path="/home"  element={<Home username={username} />} />  {/* Pass username to Home */}
       </Routes>
+      </div>
     </Router>
   );
 };
