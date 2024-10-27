@@ -1,51 +1,68 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+
+const Dropdown = ({ isOpen, toggleDropdown, children }) => {
+    const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                toggleDropdown(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [toggleDropdown]);
+
+    return (
+        <div ref={dropdownRef}>
+            {isOpen && (
+                <div className="dropdown-menu">
+                    {children}
+                </div>
+            )}
+        </div>
+    );
+};
 
 const Navbar = ({ isLoggedIn, handleLogout }) => {
     const [dropdownOpen1, setDropdownOpen1] = useState(false);
     const [dropdownOpen2, setDropdownOpen2] = useState(false);
 
-    const toggleDropdown1 = (e) => {
-        e.preventDefault();
-        setDropdownOpen1(prev => !prev);
-        if (dropdownOpen2) setDropdownOpen2(false);
-    };
+    const handleMouseEnter1 = () => setDropdownOpen1(true);
+    const handleMouseLeave1 = () => setDropdownOpen1(false);
 
-    const toggleDropdown2 = (e) => {
-        e.preventDefault();
-        setDropdownOpen2(prev => !prev);
-        if (dropdownOpen1) setDropdownOpen1(false);
-    };
+    const handleMouseEnter2 = () => setDropdownOpen2(true);
+    const handleMouseLeave2 = () => setDropdownOpen2(false);
 
     return (
         <nav className="navbar">
             <h2>My SPA</h2>
             <ul>
                 <li><Link to="/home">Home</Link></li>
-                <li>
-                    <Link to="#" onClick={toggleDropdown1} className="dropdown-toggle" aria-haspopup="true" aria-expanded={dropdownOpen1}>
+                <li onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
+                    <Link to="#" className="dropdown-toggle" aria-haspopup="true" aria-expanded={dropdownOpen1}>
                         View animals
                     </Link>
-                    {dropdownOpen1 && (
-                        <div className="dropdown-menu" onClick={(e) => e.stopPropagation()}>
-                            <Link to="/service1">Dogs</Link>
-                            <Link to="/service2">Cats</Link>
-                        </div>
-                    )}
+                    <Dropdown isOpen={dropdownOpen1} toggleDropdown={setDropdownOpen1}>
+                        <Link to="/dog">View Dogs</Link>
+                        <Link to="/cat">View Cats</Link>
+                    </Dropdown>
                 </li>
-                {isLoggedIn && ( // Conditionally render the Services link
-                    <li>
-                        <Link to="#" onClick={toggleDropdown2} className="dropdown-toggle" aria-haspopup="true" aria-expanded={dropdownOpen2}>
+                {isLoggedIn && (
+                    <li onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
+                        <Link to="#" className="dropdown-toggle" aria-haspopup="true" aria-expanded={dropdownOpen2}>
                             Services
                         </Link>
-                        {dropdownOpen2 && (
-                            <div className="dropdown-menu" onClick={(e) => e.stopPropagation()}>
-                                <Link to="/service1">Service 1</Link>
-                                <Link to="/service2">Service 2</Link>
-                                <Link to="/service3">Service 3</Link>
-                            </div>
-                        )}
+                        <Dropdown isOpen={dropdownOpen2} toggleDropdown={setDropdownOpen2}>
+                            <Link to="/service1">Service 1</Link>
+                            <Link to="/service2">Service 2</Link>
+                            <Link to="/service3">Service 3</Link>
+                        </Dropdown>
                     </li>
                 )}
                 <li><Link to="/aboutus">About Us</Link></li>
