@@ -40,11 +40,11 @@
   }
   
   
-  /* .wrapper {
+  .wrapper {
     display:flex;
     max-width:70%;
     justify-content: flex-end;
-  } */
+  }
   .title{
     font-family: 'Happy Monkey', cursive, 'Helvetica Neue',
     sans-serif;
@@ -144,11 +144,11 @@
     object-fit: cover;
     margin: 0.5rem;
   }
-  .dog-container {
+  .dog-container,.cat-container{
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the items horizontally */
-    margin: 10px; /* Add some space around each dog container */
+    align-items: center; 
+    margin: 10px; 
 }
 
 
