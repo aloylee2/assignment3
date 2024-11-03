@@ -1,15 +1,27 @@
-import React from 'react'
+// SearchBar.js
+import React, { useState } from 'react';
+import './Searchbar.css';
 
-const Searchbar = () => {
-  return (
-    <div class='searchbar'>
-        <input type='text' placeholder='Search breed ...' value={value} onchange={(e)=>{
-            setValue(e.target.value);
-        }}
-        />
+const SearchBar = ({ onSearch, placeholder = "Search..." }) => {
+    const [query, setQuery] = useState('');
+
+    const handleInputChange = (e) => {
+        const newQuery = e.target.value;
+        setQuery(newQuery);
+        onSearch(newQuery); // Update the parent component's search query
+    };
+
+    return (
+        <div className="search-bar">
+            <input 
+                type="text" 
+                placeholder={placeholder} 
+                value={query} 
+                onChange={handleInputChange}
+                className="search-input"
+            />
         </div>
-  )
-}
+    );
+};
 
-
-export default Searchbar;
+export default SearchBar;

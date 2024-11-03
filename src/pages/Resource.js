@@ -1,58 +1,65 @@
-import React,  { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import './Cat.css'
+import SearchBar from '../components/Searchbar';
+import Button from '../components/Button';
+import './Resource.css';
 
-const Resource  = ( { path,  render  }    ) => {
-
+const Resource = ({ path, render }) => {
     const initialState = {
-        trans:[],
+        trans: [],
         loading: true,
-        error: null
-    }
+        error: null,
+    };
 
-    const [ state, setState ] = useState( initialState );
+    const [state, setState] = useState(initialState);
+    const [searchQuery, setSearchQuery] = useState(''); // State for search query
 
-    const getData = async ( ) => {
-
+    const getData = useCallback(async () => {
         try {
-
-            const result = await axios.get( path );
-
-            console.log(' result ', result );
-
+            const result = await axios.get(path);
             const newData = {
                 trans: result.data,
                 loading: false,
-                error:null
-            }
-
-            setState( newData );
-           
+                error: null,
+            };
+            setState(newData);
         } catch (error) {
-           
-            console.log('error in get data', error.message)
+            console.log('Error in getting data', error.message);
         }
+    }, [path]);
 
-
-    }  
-
-
-    useEffect( () => {  
-
+    useEffect(() => {
         getData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [getData]);
 
+    const handleSearchInput = (query) => {
+        setSearchQuery(query);
+    };
+
+    const handleSearch = () => {
+        // This could also just update the state if needed
+        console.log("Searching for:", searchQuery);
+        // In this example, we don't need to do anything here because 
+        // the input from SearchBar already updates the searchQuery state.
+    };
+
+    const filteredData = state.trans.filter((item) => {
+        const breedName = item.breeds && item.breeds[0] && item.breeds[0].name;
+        return breedName && breedName.toLowerCase().includes(searchQuery.toLowerCase());
+    });
 
     return (
-
-        <div  className='showlist'>
-           
-
-          {   render( state )  }
-
+        <div>
+            <div className="search-container">
+                <SearchBar onSearch={handleSearchInput} placeholder="Search breeds..." />
+                <Button onClick={handleSearch} label="Search" />
+            </div>
+        <div className='showlist'>
+            
+        {render({ trans: filteredData, loading: state.loading })}
         </div>
-    )
-}
+        </div>
+    );
+};
 
-export default Resource
+export default Resource;

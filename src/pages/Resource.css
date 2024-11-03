@@ -1,0 +1,91 @@
+.search-container {
+    display: flex; 
+    align-items: center; 
+    margin:1rem 1rem; 
+    justify-content: center;
+  }
+  
+  .search-input {
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    font-size: 1rem; 
+  }
+
+  .showlist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+  }
+
+  .image {
+    width:  300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0.5rem;
+  }
+  .breed-name {
+    text-align: center; 
+    margin-top: 8px; 
+    font-size: 0.8rem;
+    font-weight: bold; 
+  }
+  
+  @media (max-width: 992px) {
+    .showlist {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+  }
+  
+  @media (max-width: 600px) {
+  
+    .title {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.7rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .showlist {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+  
+   
+  .image {
+    width:  300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0.3rem;
+  }
+  
+  
+  .btn {
+    display: inline-block;
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 0.5rem;
+    transition: opacity 0.5s ease-in-out;
+    text-decoration: none;
+    margin-right:0.5rem;
+    margin-bottom:1rem;
+  }
+  
+  .btn-refresh {
+    opacity: 1;
+  }
+  
+  }
+  
+  
+
+
+
