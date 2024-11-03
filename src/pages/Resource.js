@@ -55,8 +55,9 @@ const Resource = ({ path, render }) => {
                 <Button onClick={handleSearch} label="Search" />
             </div>
         <div className='showlist'>
-            
+       
         {render({ trans: filteredData, loading: state.loading })}
+        
         </div>
         </div>
     );

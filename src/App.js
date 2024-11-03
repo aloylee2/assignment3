@@ -6,8 +6,8 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import ShowCat from './pages/ResourceCat';
 import ShowDog from './pages/ResourceDog';
-import Dogform from './pages/AdoptDog';
 import Catform from './pages/AdoptCat';
+import AdoptAnimalForm from './pages/AdoptAnimalForm';
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -33,7 +33,7 @@ const App = () => {
         <Route path="/cat" element={<ShowCat/>} />
         <Route path="/dog" element={<ShowDog/>} />
         <Route path="/register" element={<Register />} />
-        <Route path="/adoptdog" element={<Dogform />} />
+        <Route path="/adopt-animal" element={<AdoptAnimalForm />} />
         <Route path="/adoptcat" element={<Catform />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/home"  element={<Home username={username} />} />  {/* Pass username to Home */}
