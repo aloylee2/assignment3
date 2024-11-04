@@ -51,7 +51,6 @@ const Resource = ({ path, render }) => {
     return (
 <div>
   <div className="search-container">
-    <h3 className="h3_search">Search :</h3>
     <SearchBar onSearch={handleSearchInput} placeholder="Search breeds..." />
   </div>
   <div className="showlist">
