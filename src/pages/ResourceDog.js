@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Resource from './Resource';
+import Button from '../components/Button';
 
 const ShowDog = () => {
     const API_KEY = 'live_XHTGZfx3FBiaEZ89gg6BxbZEiVho8EKg1Wsk9I9TMy3Y3Q1FZ1PJw0T8O0GN8MBE'; // Dog API key
-    const webURL = `https://api.thedogapi.com/v1/images/search?limit=20&api_key=${API_KEY}`;
+    const webURL = `https://api.thedogapi.com/v1/images/search?limit=20&has_breeds=1&api_key=${API_KEY}`;
     const navigate = useNavigate();
 
     const render = (data) => {
@@ -13,7 +14,7 @@ const ShowDog = () => {
 
         return data.trans
             .filter(dog => dog.breeds && dog.breeds.length > 0 && dog.url)
-            .slice(0, 15)
+            .slice(0, 13)
             .map(dog => {
                 const breed = dog.breeds[0];
                 const weight = breed.weight.imperial;
@@ -30,9 +31,12 @@ const ShowDog = () => {
 
                 return (
                     <div key={dog.id} onClick={handleImageClick} style={{ cursor: 'pointer' }}>
-                        <img className="image" src={dog.url} alt={breed.name || 'Dog Image'} style={{ width: '200px', height: 'auto', margin: '10px' }} />
-                        <h2 className="breed-name">Breed Type: {breed.name || 'Unknown Breed'}</h2>
+                    <div className="dog_card">
+                      <img className="dog_image" src={dog.url} alt={breed.name || 'Dog Image'} />
+                      <h2 className="breed-name">Breed Type: {breed.name || 'Unknown Breed'}</h2>
+                      <p className="breed-temperament">Temperament: {breed.temperament || 'Unknown temperament'}</p>
                     </div>
+                  </div>
                 );
             });
     };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import './AdoptAnimalForm.css';
 
 const AdoptAnimalForm = () => {
     const query = new URLSearchParams(useLocation().search);
@@ -13,23 +14,24 @@ const AdoptAnimalForm = () => {
     const temperament = query.get('temperament');
 
     return (
-        <div>
-            <h2>Adopt a {animalType.charAt(0).toUpperCase() + animalType.slice(1)}</h2>
-            <div>
+        <div className="adopt-animal-container">
+            <h2 className="adopt-animal-title">Adopt a {animalType.charAt(0).toUpperCase() + animalType.slice(1)}</h2>
+            <div className="animal-image-container">
                 {animalImage ? (
-                    <img src={animalImage} alt={breedName} style={{ width: '200px', height: 'auto' }} />
+                    <img src={animalImage} alt={breedName} className="animal-image" />
                 ) : (
                     <p>No image available</p>
                 )}
             </div>
-            <div>
-                <p><strong>Breed:</strong> {breedName}</p>
-                <p><strong>Weight:</strong> {weight} lbs</p>
-                <p><strong>Height:</strong> {height} inches</p>
-                <p><strong>Bred For:</strong> {bredFor}</p>
-                <p><strong>Life Span:</strong> {lifeSpan}</p>
-                <p><strong>Temperament:</strong> {temperament}</p>
+            <div className="animal-details">
+                <p><strong>Breed:</strong> {breedName || 'Unknown'}</p>
+                <p><strong>Weight:</strong> {weight || 'Unknown'} lbs</p>
+                <p><strong>Height:</strong> {height || 'Unknown'} inches</p>
+                <p><strong>Bred For:</strong> {bredFor || 'Unknown'}</p>
+                <p><strong>Life Span:</strong> {lifeSpan || 'Unknown'}</p>
+                <p><strong>Temperament:</strong> {temperament || 'Unknown'}</p>
             </div>
+            <button className="adopt-button">Adopt</button>
         </div>
     );
 };

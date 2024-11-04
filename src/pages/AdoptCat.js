@@ -5,13 +5,13 @@ const CatForm = () => {
     // Extract query parameters from the URL
     const query = new URLSearchParams(useLocation().search);
     const catImage = query.get('image');
-    const catBreed = query.get('breed') || 'Unknown'; // Default to 'Unknown' if no breed is provided
+    const catBreed = query.get('breed') || 'Unknown'; 
 
     // Extract additional parameters with defaults
-    const catLifespan = query.get('lifespan') || 'Unknown'; // Default to 'Unknown'
-    const catWeightImperial = query.get('weightImperial') || 'Unknown'; // Default to 'Unknown'
-    const catWeightMetric = query.get('weightMetric') || 'Unknown'; // Default to 'Unknown'
-    const catTemperament = query.get('temperament') || 'Unknown'; // Default to 'Unknown'
+    const catLifespan = query.get('lifespan') || 'Unknown'; 
+    const catWeightImperial = query.get('weightImperial') || 'Unknown'; 
+    const catWeightMetric = query.get('weightMetric') || 'Unknown'; 
+    const catTemperament = query.get('temperament') || 'Unknown';
 
     // Debug logs for URL and breed
     console.log('Cat Image URL:', catImage);

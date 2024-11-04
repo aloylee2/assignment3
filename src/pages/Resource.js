@@ -49,17 +49,15 @@ const Resource = ({ path, render }) => {
     });
 
     return (
-        <div>
-            <div className="search-container">
-                <SearchBar onSearch={handleSearchInput} placeholder="Search breeds..." />
-                <Button onClick={handleSearch} label="Search" />
-            </div>
-        <div className='showlist'>
-       
-        {render({ trans: filteredData, loading: state.loading })}
-        
-        </div>
-        </div>
+<div>
+  <div className="search-container">
+    <h3 className="h3_search">Search :</h3>
+    <SearchBar onSearch={handleSearchInput} placeholder="Search breeds..." />
+  </div>
+  <div className="showlist">
+    {render({ trans: filteredData, loading: state.loading })}
+  </div>
+</div>
     );
 };
 
