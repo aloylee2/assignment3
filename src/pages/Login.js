@@ -14,7 +14,8 @@ const Login = ({ onLogin }) => {
     if (user) {
       alert('Login successful!');
       onLogin(username);  // Pass the username to the onLogin function
-      navigate('/home');
+      localStorage.setItem('isLoggedIn', 'true'); // Set login status in local storage
+      navigate('/');
     } else {
       alert('Invalid username or password');
     }

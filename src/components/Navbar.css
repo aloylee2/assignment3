@@ -1,65 +1,102 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333; /* Dark background for the navbar */
-    padding: 10px 20px; /* Spacing around the navbar */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the navbar items horizontally */
+    align-items: center; /* Center items vertically */
+    background-color: #333; 
+    padding: 10px 20px; 
+    flex-direction: column; /* Stack logo and menu vertically */
 }
 
 .navbar h2 {
-    color: #fff; /* White text for the title */
-    margin: 0; /* Remove default margin */
+    color: #fff; 
+    margin: 0; 
+    display: flex; /* Allow flex to align text */
+    align-items: center; /* Center the logo text vertically */
+    padding-bottom: 10px; /* Add bottom padding to the logo */
 }
 
 .navbar ul {
-    list-style: none; /* Remove bullet points */
-    display: flex; /* Use flexbox for the list */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    list-style: none; 
+    display: flex; /* Flex for larger screens */
+    flex-direction: row; /* Row direction for larger screens */
+    margin: 0; 
+    padding: 0;
+    justify-content: center; /* Center the navbar items */
 }
 
 .navbar li {
-    position: relative; /* For dropdown positioning */
+    position: relative; 
 }
 
 .navbar a {
-    color: #fff; /* White text for links */
-    text-decoration: none; /* Remove underline from links */
-    padding: 10px 15px; /* Spacing around links */
-    display: block; /* Make links block-level for better hit area */
+    color: #fff; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    display: flex; /* Use flex for anchor tags */
+    align-items: center; /* Center the text within the anchor */
 }
 
 .navbar a:hover {
-    background-color: #555; /* Darken background on hover */
+    background-color: #555; 
 }
 
 .dropdown-menu {
-    display: block; /* Ensure dropdown is block-level */
-    position: absolute; /* Position dropdown relative to the parent li */
-    top: 100%; /* Align it below the parent */
-    left: 0; /* Align to the left */
-    background-color: #444; /* Dark background for dropdown */
-    z-index: 1000; /* Ensure it appears above other content */
+    display: block; 
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    background-color: #444;
+    z-index: 1000;
 }
 
 .dropdown-menu a {
-    padding: 10px 15px; /* Spacing for dropdown links */
-    white-space: nowrap; /* Prevent wrapping */
+    padding: 10px 15px;
+    white-space: nowrap; 
 }
 
 .dropdown-menu a:hover {
-    background-color: #555; /* Darken dropdown item on hover */
+    background-color: #555; 
 }
 
 .logout-button {
-    background-color: #e74c3c; /* Red background for logout button */
-    color: #fff; /* White text for button */
-    border: none; /* Remove border */
-    padding: 10px 15px; /* Spacing for button */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: background-color 0.3s; /* Smooth background transition */
+    background-color: #e74c3c; 
+    color: #fff; 
+    border: none;
+    padding: 10px 15px; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
 }
 
 .logout-button:hover {
-    background-color: #c0392b; /* Darken button on hover */
+    background-color: #c0392b; 
+}
+
+/* Media query for tablets and phones */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack logo and menu vertically */
+        align-items: center; /* Center items horizontally */
+        width: 100%; /* Full width for the navbar */
+    }
+
+    .navbar h2 {
+        margin-bottom: 10px; /* Space between logo and menu */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center the menu items */
+        padding: 0; /* Remove padding */
+        width: 100%; /* Full width for the menu */
+    }
+
+    .navbar li {
+        width: 100%; /* Make each item full width */
+        text-align: center; /* Center text in each item */
+    }
+
+    .navbar a {
+        padding: 10px 20px; /* Adjust padding for easier touch access */
+        width: 100%; /* Full width for touch targets */
+    }
 }

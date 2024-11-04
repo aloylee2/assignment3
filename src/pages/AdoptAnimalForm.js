@@ -1,8 +1,9 @@
+// src/AdoptAnimalForm.js
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './AdoptAnimalForm.css';
 
-const AdoptAnimalForm = () => {
+const AdoptAnimalForm = ({ isLoggedIn, loggedInUsername }) => {
     const query = new URLSearchParams(useLocation().search);
     const animalType = query.get('type') || 'dog';
     const animalImage = query.get('image');
@@ -12,6 +13,24 @@ const AdoptAnimalForm = () => {
     const bredFor = query.get('bredFor');
     const lifeSpan = query.get('lifeSpan');
     const temperament = query.get('temperament');
+    const navigate = useNavigate();
+
+    const handleAdoptClick = () => {
+        console.log("User logged in status:", isLoggedIn); // Debugging line
+        if (!isLoggedIn) {
+            alert("Not logged in. Unable to adopt.");
+            navigate('/login')
+        } else {
+            navigate('/adoption-form', {
+                state: {
+                    animalType,
+                    animalImage,
+                    breedName,
+                    loggedInUsername,
+                },
+            });
+        }
+    };
 
     return (
         <div className="adopt-animal-container">
@@ -31,7 +50,7 @@ const AdoptAnimalForm = () => {
                 <p><strong>Life Span:</strong> {lifeSpan || 'Unknown'}</p>
                 <p><strong>Temperament:</strong> {temperament || 'Unknown'}</p>
             </div>
-            <button className="adopt-button">Adopt</button>
+            <button className="adopt-button" onClick={handleAdoptClick}>Adopt</button>
         </div>
     );
 };

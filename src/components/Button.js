@@ -1,6 +1,5 @@
 // Button.js
 import React from 'react';
-import './Button.css'; // Optional styling
 
 const Button = ({ onClick, label, className, type = 'button' }) => {
     return (
