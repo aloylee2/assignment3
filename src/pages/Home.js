@@ -5,6 +5,7 @@ import Counter from '../components/Counter';
 import Button from '../components/Button';
 import heroBanner from '../images/hero_banner.jpg'; // Ensure the path is correct
 import gallery from '../images/dog_gallery.avif';
+import ContactUs from './ContactUs';
 
 const Home = ({ isLoggedIn }) => {
   const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
@@ -76,6 +77,7 @@ const Home = ({ isLoggedIn }) => {
         )}
       </div>
       <Counter />
+      <ContactUs />
     </div>
   );
 };
