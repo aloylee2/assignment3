@@ -59,7 +59,8 @@
     padding: 20px;
 }
 .gallery_text{
-    margin: 25px;;
+    margin: 25px;
+    text-align: center;
 }
 
 .dog_image {
