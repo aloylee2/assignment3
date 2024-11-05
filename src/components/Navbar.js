@@ -33,6 +33,7 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
     const [dropdownOpen1, setDropdownOpen1] = useState(false);
     const [dropdownOpen2, setDropdownOpen2] = useState(false);
     const [dropdownOpen3, setDropdownOpen3] = useState(false);
+    const [dropdownOpen4, setDropdownOpen4] = useState(false);
 
     const toggleDropdown1 = () => setDropdownOpen1((prev) => !prev);
     const toggleDropdown2 = () => setDropdownOpen2((prev) => !prev);
@@ -46,6 +47,9 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
 
     const handleMouseEnter3 = () => setDropdownOpen3(true);
     const handleMouseLeave3 = () => setDropdownOpen3(false);
+
+    const handleMouseEnter4 = () => setDropdownOpen4(true);
+    const handleMouseLeave4 = () => setDropdownOpen4(false);
 
     return (
         <div className="navbar-container">
@@ -69,8 +73,8 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
                             Adopt animals
                         </Link>
                         <Dropdown isOpen={dropdownOpen1} toggleDropdown={setDropdownOpen1}>
-                            <Link to="/dog">View Dogs</Link>
-                            <Link to="/cat">View Cats</Link>
+                            <Link to="/dog">Dogs</Link>
+                            <Link to="/cat">Cats</Link>
                         </Dropdown>
                     </li>
                     <li><Link to="/release_pet">Release Pet</Link></li>
@@ -81,10 +85,17 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
                         <Dropdown isOpen={dropdownOpen3} toggleDropdown={setDropdownOpen3}>
                             <Link to="/Donate">Donate</Link>
                             <Link to="/Volunteer">Volunteer</Link>
-                            <Link to="/Shop">Shop</Link>
                         </Dropdown>
                     </li>
-                    <li><Link to="/aboutus">Contact</Link></li>
+                    <li onMouseEnter={handleMouseEnter4} onMouseLeave={handleMouseLeave4}>
+                        <Link to="#" className="dropdown-toggle" onClick={toggleDropdown3} aria-haspopup="true" aria-expanded={dropdownOpen3}>
+                            About us
+                        </Link>
+                        <Dropdown isOpen={dropdownOpen4} toggleDropdown={setDropdownOpen4}>
+                            <Link to="/Contact">Contact Us</Link>
+                            <Link to="/Mission">Mission/Purpose</Link>
+                        </Dropdown>
+                    </li>
 
                     {isLoggedIn && (
                         <li onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>

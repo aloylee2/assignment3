@@ -9,6 +9,8 @@ import ShowDog from './pages/ResourceDog';
 import AdoptAnimalForm from './pages/AdoptAnimalForm';
 import AdoptionForm from './pages/AdoptionForm';
 import './App.css';
+import ViewGallery from './pages/ViewGallery';
+import Footer from './components/Footer';
 
 
 
@@ -40,10 +42,11 @@ const App = () => {
           <Route path="/" element={<Home username={username} />} />  {/* Pass username to Home */}
           <Route path="/adopt-animal" element={<AdoptAnimalForm isLoggedIn={loggedIn} loggedInUsername={username} />}/> 
           <Route path="/adoption-form" element={<AdoptionForm />} />
+          <Route path="/view_gallery" element={<ViewGallery />} />
         </Routes>
         <div className="container">
       </div>
-      {/* footer */}
+      <Footer/>
     </Router>
   );
 };

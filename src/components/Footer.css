@@ -1,0 +1,51 @@
+/* Footer.css */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+  }
+  
+  .footer-heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .footer-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-link {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .footer-contact-text {
+    margin: 5px 0;
+  }
+  
+  /* Removed footer-icon and social icon styles */
+  
+  .footer-copyright {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
