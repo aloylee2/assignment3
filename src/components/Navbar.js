@@ -21,7 +21,7 @@ const Dropdown = ({ isOpen, toggleDropdown, children }) => {
     return (
         <div ref={dropdownRef}>
             {isOpen && (
-                <div className="dropdown-menu">
+                <div className={`dropdown-menu ${isOpen ? "show" : ""}`}>
                     {children}
                 </div>
             )}
@@ -48,11 +48,20 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
     const handleMouseLeave3 = () => setDropdownOpen3(false);
 
     return (
-        <nav className="navbar">
-            <div>
-                <h2>My Logo</h2>
+        <div className="navbar-container">
+            <div className="header">
+                <div className="logo">My Logo</div>
+                <div className="contact-info">
+                    <br/>
+                    <span>| Opening Hours: 9am - 5pm |</span>
+                    <br/>
+                    <span>| Email: info@example.com |</span>
+                    <br/>
+                    <span>| Call Us: (123) 456-7890 |</span>
+                    <br/>
+                </div>
             </div>
-            <div>
+            <nav className="navbar">
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
@@ -80,7 +89,7 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
                     {isLoggedIn && (
                         <li onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
                             <Link to="#" className="dropdown-toggle" onClick={toggleDropdown2} aria-haspopup="true" aria-expanded={dropdownOpen2}>
-                                {username} {/* Display the logged-in username here */}
+                                {username}
                             </Link>
                             <Dropdown isOpen={dropdownOpen2} toggleDropdown={setDropdownOpen2}>
                                 <Link to="/service1">View profile</Link>
@@ -98,8 +107,8 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
                         </li>
                     )}
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
     );
 };
 
