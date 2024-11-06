@@ -138,6 +138,12 @@
     background-color: #fff;
     animation: dropdown 0.3s ease-in-out;
   }
+  .counter{
+    margin:20px;
+  }
+  .youtube_video{
+    margin: 20px;
+  }
   
   /* Add animation for smooth expansion */
   @keyframes dropdown {

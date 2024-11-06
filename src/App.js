@@ -11,6 +11,8 @@ import AdoptionForm from './pages/AdoptionForm';
 import './App.css';
 import ViewGallery from './pages/ViewGallery';
 import Footer from './components/Footer';
+import ContactUs from './pages/ContactUs';
+import ReleasePet from './pages/ReleasePet';
 
 
 
@@ -43,6 +45,8 @@ const App = () => {
           <Route path="/adopt-animal" element={<AdoptAnimalForm isLoggedIn={loggedIn} loggedInUsername={username} />}/> 
           <Route path="/adoption-form" element={<AdoptionForm />} />
           <Route path="/view_gallery" element={<ViewGallery />} />
+          <Route path="/Contact" element={<ContactUs/>}/>
+          <Route path="/release_pet" element={<ReleasePet/>}/>
         </Routes>
         <div className="container">
       </div>

@@ -5,7 +5,8 @@ import Counter from '../components/Counter';
 import Button from '../components/Button';
 import heroBanner from '../images/hero_banner.jpg'; // Ensure the path is correct
 import gallery from '../images/dog_gallery.avif';
-import ContactUs from './ContactUs';
+import YouTubeVideo from '../components/Video';
+
 
 const Home = ({ isLoggedIn }) => {
   const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
@@ -76,8 +77,14 @@ const Home = ({ isLoggedIn }) => {
           </div>
         )}
       </div>
+      <div className='counter'>
       <Counter />
-      <ContactUs />
+      </div>
+     
+      <div className='youtube_video'>
+      <YouTubeVideo />
+      </div>
+     
     </div>
   );
 };

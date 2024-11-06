@@ -1,7 +1,6 @@
 // src/AdoptionForm.js
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-//import './AdoptionForm.css'; // Optional styling
 
 const AdoptionForm = () => {
     const location = useLocation();

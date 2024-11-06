@@ -24,7 +24,7 @@
   width: fit-content; 
 }
 
-.dog_card {
+.dog_card, .cat_card {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
   box-sizing: border-box;
 }
 
-.dog_image {
+.dog_image,.cat_image {
   width: 280px;
   height: 280px;
   object-fit: cover;
