@@ -13,6 +13,7 @@ import ViewGallery from './pages/ViewGallery';
 import Footer from './components/Footer';
 import ContactUs from './pages/ContactUs';
 import ReleasePet from './pages/ReleasePet';
+import Donation from './pages/Donation';
 
 
 
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/view_gallery" element={<ViewGallery />} />
           <Route path="/Contact" element={<ContactUs/>}/>
           <Route path="/release_pet" element={<ReleasePet/>}/>
+          <Route path="/Donate" element={<Donation/>}/>
         </Routes>
         <div className="container">
       </div>

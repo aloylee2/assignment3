@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const ReusableForm = ({ fields, onSubmit }) => {
+const ReusableForm = ({ fields, onSubmit, onFieldChange }) => {
   const initialFormState = fields.reduce((acc, field) => {
     acc[field.name] = '';
     return acc;
   }, {});
 
   const [formData, setFormData] = useState(initialFormState);
-  const [imagePreview, setImagePreview] = useState(null); // State to store the image preview
+  const [imagePreview, setImagePreview] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (files) {
-      // If the field is a file input, handle the file change
       const file = files[0];
       setFormData({
         ...formData,
         [name]: file
       });
-      // Create a URL for the selected image file
       setImagePreview(URL.createObjectURL(file));
     } else {
       setFormData({
@@ -26,13 +24,18 @@ const ReusableForm = ({ fields, onSubmit }) => {
         [name]: value
       });
     }
+
+    // Call onFieldChange to notify parent component of the field change
+    if (onFieldChange) {
+      onFieldChange(name, value);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData); // Pass the form data (including image) to the parent
-    setFormData(initialFormState); // Reset the form
-    setImagePreview(null); // Reset the image preview
+    onSubmit(formData);
+    setFormData(initialFormState);
+    setImagePreview(null);
   };
 
   return (
@@ -40,7 +43,22 @@ const ReusableForm = ({ fields, onSubmit }) => {
       {fields.map((field) => (
         <div key={field.name}>
           <label htmlFor={field.name}>{field.label}:</label>
-          {field.type === 'textarea' ? (
+          {field.options ? (
+            <select
+              id={field.name}
+              name={field.name}
+              value={formData[field.name]}
+              onChange={handleChange}
+              required={field.required}
+            >
+              <option value="">Select an option</option>
+              {field.options.map((option, index) => (
+                <option key={index} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          ) : field.type === 'textarea' ? (
             <textarea
               id={field.name}
               name={field.name}
@@ -78,9 +96,6 @@ const ReusableForm = ({ fields, onSubmit }) => {
       )}
 
       <button type="submit">Submit</button>
-
-
-
     </form>
   );
 };
