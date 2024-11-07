@@ -102,11 +102,7 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
                             <Link to="#" className="dropdown-toggle" onClick={toggleDropdown2} aria-haspopup="true" aria-expanded={dropdownOpen2}>
                                 {username}
                             </Link>
-                            <Dropdown isOpen={dropdownOpen2} toggleDropdown={setDropdownOpen2}>
-                                <Link to="/service1">View profile</Link>
-                                <Link to="/service2">Edit profile</Link>
-                                <Link to="/service3">Service 3</Link>
-                            </Dropdown>
+
                         </li>
                     )}
 
