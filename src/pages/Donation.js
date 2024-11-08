@@ -14,7 +14,7 @@ const Donation = ({ isLoggedIn}) => {
     console.log('User logged in status:', isLoggedIn);
     if (!isLoggedIn) {
       alert('Not logged in. Unable to donate.');
-      //navigate('/login')
+      navigate('/login')
   }
   else{
     console.log('Form submitted:',formData);
