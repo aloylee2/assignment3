@@ -5,19 +5,19 @@ import ReusableForm from '../components/Form';
 import dogGallery from '../images/dog_gallery.avif';
 import './Donation.css';
 
-const Donation = ({ isLoggedIn, loggedInUsername}) => {
+const Donation = ({ isLoggedIn}) => {
   const [selectedPayment, setSelectedPayment] = useState('');
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (formData) => {
     console.log('User logged in status:', isLoggedIn);
     if (!isLoggedIn) {
       alert('Not logged in. Unable to donate.');
       //navigate('/login')
   }
   else{
-    console.log('Form submitted:');
+    console.log('Form submitted:',formData);
     alert('Thanks for donating!');
     }
   };
