@@ -57,8 +57,8 @@ const Home = ({ isLoggedIn }) => {
      </div>
      
       </div>
-      <div className="container_dropdown" style={{ width: '90%' }}>
-        <div className="header_drop" onClick={toggleDropdown1}>
+      <div className='container_dropdown' style={{ width: '90%' }}>
+        <div className='header_drop' onClick={toggleDropdown1}>
           <h3>More Information</h3>
         </div>
         {isDropdownOpen1 && (

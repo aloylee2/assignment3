@@ -50,8 +50,6 @@ const App = () => {
           <Route path="/release_pet" element={<ReleasePet/>}/>
           <Route path="/Donate" element={<Donation/>}/>
         </Routes>
-        <div className="container">
-      </div>
       <Footer/>
     </Router>
   );
@@ -59,29 +57,5 @@ const App = () => {
 
 export default App;
 
-// import React from 'react';
-// import ReusableForm from './components/Form';
 
-// const App = () => {
-//   const contactFields = [
-//     { name: 'name', label: 'Name', type: 'text', required: true },
-//     { name: 'email', label: 'Email', type: 'email', required: true },
-//     { name: 'message', label: 'Message', type: 'textarea', required: true },
-//     { name: 'age', label: 'age', type: 'number', required: true },
-//   ];
-
-//   const handleContactSubmit = (data) => {
-//     console.log('Contact Form Submitted:', data);
-//     // Add logic to handle form submission, such as an API call
-//   };
-
-//   return (
-//     <div>
-//       <h1>Contact Us</h1>
-//       <ReusableForm fields={contactFields} onSubmit={handleContactSubmit} />
-//     </div>
-//   );
-// };
-
-// export default App;
 
