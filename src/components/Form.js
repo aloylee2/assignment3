@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 
 const ReusableForm = ({ fields, onSubmit, onFieldChange }) => {
   const initialFormState = fields.reduce((acc, field) => {
@@ -25,7 +25,6 @@ const ReusableForm = ({ fields, onSubmit, onFieldChange }) => {
       });
     }
 
-    // Call onFieldChange to notify parent component of the field change
     if (onFieldChange) {
       onFieldChange(name, value);
     }
@@ -49,9 +48,10 @@ const ReusableForm = ({ fields, onSubmit, onFieldChange }) => {
               name={field.name}
               value={formData[field.name]}
               onChange={handleChange}
+              className={field.className}
               required={field.required}
             >
-              <option value="">Select an option</option>
+              <option value=''>Select an option</option>
               {field.options.map((option, index) => (
                 <option key={index} value={option}>
                   {option}
@@ -64,15 +64,17 @@ const ReusableForm = ({ fields, onSubmit, onFieldChange }) => {
               name={field.name}
               value={formData[field.name]}
               onChange={handleChange}
+              className={field.className}
               required={field.required}
             />
           ) : field.type === 'file' ? (
             <input
-              type="file"
+              type='file'
               id={field.name}
               name={field.name}
-              accept="image/*"
+              accept='image/*'
               onChange={handleChange}
+              className={field.className}
               required={field.required}
             />
           ) : (
@@ -82,6 +84,7 @@ const ReusableForm = ({ fields, onSubmit, onFieldChange }) => {
               name={field.name}
               value={formData[field.name]}
               onChange={handleChange}
+              className={field.className}
               required={field.required}
             />
           )}
@@ -91,11 +94,11 @@ const ReusableForm = ({ fields, onSubmit, onFieldChange }) => {
       {imagePreview && (
         <div>
           <h3>Image Preview:</h3>
-          <img src={imagePreview} alt="Preview" style={{ maxWidth: '200px', maxHeight: '200px' }} />
+          <img src={imagePreview} alt='Preview' style={{ maxWidth: '200px', maxHeight: '200px' }} />
         </div>
       )}
 
-      <button type="submit">Submit</button>
+      <button type='submit'>Submit</button>
     </form>
   );
 };

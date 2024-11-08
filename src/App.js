@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import ContactUs from './pages/ContactUs';
 import ReleasePet from './pages/ReleasePet';
 import Donation from './pages/Donation';
+import Volunteer from './pages/Volunteer';
 
 
 
@@ -24,13 +25,13 @@ const App = () => {
   const handleLogin = (username) => {
     setLoggedIn(true);
     setUsername(username); 
-    localStorage.setItem('isLoggedIn', 'true'); // Persist login state
+    localStorage.setItem('isLoggedIn', 'true');
   };
   
   const handleLogout = () => {
     setLoggedIn(false);
     setUsername('');
-    localStorage.removeItem('isLoggedIn'); // Remove login state on logout
+    localStorage.removeItem('isLoggedIn'); 
   };
 
   return (
@@ -38,17 +39,18 @@ const App = () => {
       <Navbar isLoggedIn={loggedIn} handleLogout={handleLogout} username={username} />
       
         <Routes>
-          <Route path="/cat" element={<ShowCat />} />
-          <Route path="/dog" element={<ShowDog />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login onLogin={handleLogin} />} />
-          <Route path="/" element={<Home username={username} />} />  {/* Pass username to Home */}
-          <Route path="/adopt-animal" element={<AdoptAnimalForm isLoggedIn={loggedIn} loggedInUsername={username} />}/> 
-          <Route path="/adoption-form" element={<AdoptionForm />} />
-          <Route path="/view_gallery" element={<ViewGallery />} />
-          <Route path="/Contact" element={<ContactUs/>}/>
-          <Route path="/release_pet" element={<ReleasePet/>}/>
-          <Route path="/Donate" element={<Donation/>}/>
+          <Route path='/cat' element={<ShowCat />} />
+          <Route path='/dog' element={<ShowDog />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login onLogin={handleLogin} />} />
+          <Route path='/' element={<Home username={username} />} />  {/* Pass username to Home */}
+          <Route path='/adopt-animal' element={<AdoptAnimalForm isLoggedIn={loggedIn} loggedInUsername={username} />}/> 
+          <Route path='/adoption-form' element={<AdoptionForm />} />
+          <Route path='/view_gallery' element={<ViewGallery />} />
+          <Route path='/Contact' element={<ContactUs/>}/>
+          <Route path='/release_pet' element={<ReleasePet isLoggedIn={loggedIn} loggedInUsername={username}/>}/>
+          <Route path='/Donate' element={<Donation isLoggedIn={loggedIn} loggedInUsername={username}/>}/>
+          <Route path='/Volunteer' element={<Volunteer/>}/>
         </Routes>
       <Footer/>
     </Router>

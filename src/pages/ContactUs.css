@@ -1,26 +1,8 @@
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f7f8;
-    color: #4a4a4a;
-  }
-  
-  h2 {
+h2 {
     color: #34495e;
     text-align: center;
     margin-bottom: 15px;
     font-size: 28px;
-  }
-  
-  .contact-container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e1e1e1;
   }
   
   p {
@@ -30,38 +12,22 @@ body {
     font-size: 16px;
   }
   
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
   label {
     margin-bottom: 8px;
     font-weight: 500;
     font-size: 14px;
   }
   
-  input[type="text"],
-  input[type="email"],
-  textarea {
+ .name,.email,.subject,.message {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #bdc3c7;
     border-radius: 6px;
     font-size: 15px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  textarea:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-    outline: none;
-  }
-  
-  textarea {
+  .message{
     resize: vertical;
     height: 150px;
   }
@@ -97,9 +63,7 @@ body {
       font-size: 24px;
     }
   
-    input[type="text"],
-    input[type="email"],
-    textarea {
+    .name,.email,.subject,.message{
       font-size: 14px;
     }
   

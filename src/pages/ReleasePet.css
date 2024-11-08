@@ -1,0 +1,14 @@
+label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  
+.breed{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 15px;
+}

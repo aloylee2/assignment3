@@ -16,9 +16,9 @@ const AdoptAnimalForm = ({ isLoggedIn, loggedInUsername }) => {
     const navigate = useNavigate();
 
     const handleAdoptClick = () => {
-        console.log("User logged in status:", isLoggedIn); // Debugging line
+        console.log('User logged in status:', isLoggedIn); // Debugging line
         if (!isLoggedIn) {
-            alert("Not logged in. Unable to adopt.");
+            alert('Not logged in. Unable to adopt.');
             navigate('/login')
         } else {
             navigate('/adoption-form', {
@@ -33,16 +33,16 @@ const AdoptAnimalForm = ({ isLoggedIn, loggedInUsername }) => {
     };
 
     return (
-        <div className="adopt-animal-container">
-            <h2 className="adopt-animal-title">Adopt a {animalType.charAt(0).toUpperCase() + animalType.slice(1)}</h2>
-            <div className="animal-image-container">
+        <div className='adopt-animal-container'>
+            <h2 className='adopt-animal-title'>Adopt a {animalType.charAt(0).toUpperCase() + animalType.slice(1)}</h2>
+            <div className='animal-image-container'>
                 {animalImage ? (
-                    <img src={animalImage} alt={breedName} className="animal-image" />
+                    <img src={animalImage} alt={breedName} className='animal-image' />
                 ) : (
                     <p>No image available</p>
                 )}
             </div>
-            <div className="animal-details">
+            <div className='animal-details'>
                 <p><strong>Breed:</strong> {breedName || 'Unknown'}</p>
                 <p><strong>Weight:</strong> {weight || 'Unknown'} lbs</p>
                 <p><strong>Height:</strong> {height || 'Unknown'} inches</p>
@@ -50,7 +50,7 @@ const AdoptAnimalForm = ({ isLoggedIn, loggedInUsername }) => {
                 <p><strong>Life Span:</strong> {lifeSpan || 'Unknown'}</p>
                 <p><strong>Temperament:</strong> {temperament || 'Unknown'}</p>
             </div>
-            <button className="adopt-button" onClick={handleAdoptClick}>Adopt</button>
+            <button className='adopt-button' onClick={handleAdoptClick}>Adopt</button>
         </div>
     );
 };

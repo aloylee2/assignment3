@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import SearchBar from '../components/Searchbar';
-import Button from '../components/Button';
 import './Resource.css';
 
 const Resource = ({ path, render }) => {
@@ -38,7 +37,7 @@ const Resource = ({ path, render }) => {
 
     const handleSearch = () => {
         // This could also just update the state if needed
-        console.log("Searching for:", searchQuery);
+        console.log('Searching for:', searchQuery);
         // In this example, we don't need to do anything here because 
         // the input from SearchBar already updates the searchQuery state.
     };
@@ -50,10 +49,10 @@ const Resource = ({ path, render }) => {
 
     return (
 <div>
-  <div className="search-container">
-    <SearchBar onSearch={handleSearchInput} placeholder="Search breeds..." />
+  <div className='search-container'>
+    <SearchBar onSearch={handleSearchInput} placeholder='Search breeds...' />
   </div>
-  <div className="showlist">
+  <div className='showlist'>
     {render({ trans: filteredData, loading: state.loading })}
   </div>
 </div>

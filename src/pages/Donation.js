@@ -1,19 +1,36 @@
+
 import React, { useState } from 'react';
+import {  useNavigate } from 'react-router-dom';
 import ReusableForm from '../components/Form';
-import dogGallery from '../images/dog_gallery.avif'; 
+import dogGallery from '../images/dog_gallery.avif';
 import './Donation.css';
 
-const Donation = () => {
+const Donation = ({ isLoggedIn, loggedInUsername}) => {
   const [selectedPayment, setSelectedPayment] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
+
+  const handleFormSubmit = () => {
+    console.log('User logged in status:', isLoggedIn);
+    if (!isLoggedIn) {
+      alert('Not logged in. Unable to donate.');
+      //navigate('/login')
+  }
+  else{
+    console.log('Form submitted:');
+    alert('Thanks for donating!');
+    }
+  };
+
 
   const fields = [
-    { name: 'name', label: 'Name', type: 'text', required: true },
-    { name: 'email', label: 'Email', type: 'email', required: true },
+    { name: 'name', label: 'Name', type: 'text', className:'name', required: true },
+    { name: 'email', label: 'Email', type: 'email', className:'email', required: true },
     {
       name: 'donationAmount',
       label: 'Donation Amount',
       type: 'select',
+      className:'amount',
       options: ['$5', '$10', '$15', '$20', '$100'],
       required: true
     },
@@ -21,33 +38,35 @@ const Donation = () => {
       name: 'paymentMethod',
       label: 'Payment Method',
       type: 'select',
+      className:'method',
       options: ['Credit Card', 'PayNow'],
       required: true
-    },
-    ...(selectedPayment === 'Credit Card' ? [{
-      name: 'creditCard',
-      label: 'Credit Card Details',
-      type: 'text',
-      required: true
-    }] : [])
+    }
   ];
 
-  const handleFormSubmit = (formData) => {
-    console.log('Form submitted:', formData);
-    alert("Thanks for donating!");
-  };
+  if (selectedPayment === 'Credit Card') {
+    fields.push({
+      name: 'creditCard',
+      label: 'Credit Card Details',
+      className: 'credit',
+      type: 'text',
+      required: true
+    });
+  }
+
+  
 
   const handleFieldChange = (fieldName, value) => {
     if (fieldName === 'paymentMethod') {
       setSelectedPayment(value);
-      setShowModal(value === 'PayNow');  // Automatically open modal for PayNow
+      setShowModal(value === 'PayNow'); 
     }
   };
 
   return (
-    <div>
+    <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px' }}>
       <h2>Make a Donation</h2>
-    
+
       <ReusableForm
         fields={fields}
         onSubmit={handleFormSubmit}
@@ -58,10 +77,10 @@ const Donation = () => {
           <div className='modalContent'>
             <h3>Scan to Pay</h3>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <img 
-                src={dogGallery} 
-                alt="QR Code for PayNow" 
-                style={{ width: '250px', height: '200px', marginBottom: '10px' }} 
+              <img
+                src={dogGallery}
+                alt='QR Code for PayNow'
+                style={{ width: '250px', height: '200px', marginBottom: '10px' }}
               />
             </div>
           </div>

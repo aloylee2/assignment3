@@ -19,10 +19,18 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px' }}>
       <h2>Register</h2>
-      <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <label>Username:</label>
+      <input type='text' 
+      placeholder='Username' 
+      className='username'
+      value={username} onChange={(e) => setUsername(e.target.value)} />
+      <label>Password:</label>
+      <input type='password' 
+      placeholder='Password'
+      className='password' 
+      value={password} onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleRegister}>Register</button>
     </div>
   );

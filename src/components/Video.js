@@ -4,9 +4,9 @@ import './Video.css';
 
 const YouTubeVideo = () => {
   return (
-    <div className="video-container">
+    <div className='video-container'>
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=PtbtUMUPeyY"
+        url='https://www.youtube.com/watch?v=PtbtUMUPeyY'
         controls={true}
         className='video'
       />

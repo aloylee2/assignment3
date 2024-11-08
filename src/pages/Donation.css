@@ -1,32 +1,13 @@
+.credit,.method,.amount{
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 15px;
+}
+  
 
-.modalStyle {
-    position: 'fixed';
-    top: 0;
-    left: 0;
-    width: '100%';
-    height: '100%';
-    background-color: 'rgba(0, 0, 0, 0.5)';
-    display: 'flex';
-    justify-content: 'center';
-    align-items: 'center';
-    z-index: 1000;
-  };
+ 
   
- .modalContentStyle  {
-    background-Color: 'white';
-    padding: '20px';
-    border-radius: '10px';
-    text-Align: 'center';
-    box-shadow: '0 2px 10px rgba(0, 0, 0, 0.2)';
-  };
-  
-.closeButtonStyle {
-    margin-top: '10px';
-    padding: '5px 10px';
-    background-color: 'red';
-    color: 'white';
-    border: 'none';
-    border-radius: '5px';
-    cursor: 'pointer';
-  };
   

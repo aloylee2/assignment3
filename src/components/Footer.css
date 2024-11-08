@@ -1,51 +1,51 @@
 /* Footer.css */
 
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .footer-container {
+.container{
+  background-color: #333;
+}
+  .footer_container {
     display: flex;
     justify-content: space-around;
     padding: 20px;
     flex-wrap: wrap;
+   
   }
   
-  .footer-section {
+  .footer {
+   
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
     flex: 1;
     margin: 10px;
     min-width: 200px;
   }
   
-  .footer-heading {
+  .footer_heading {
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: bold;
   }
   
-  .footer-list {
+  .footer_1{
     list-style: none;
     padding: 0;
   }
   
-  .footer-link {
+  .footer_link {
     color: #fff;
     text-decoration: none;
     margin-bottom: 5px;
     display: block;
   }
   
-  .footer-contact-text {
-    margin: 5px 0;
+  .footer_contact{
+    margin: 5px 2px;
   }
   
-  /* Removed footer-icon and social icon styles */
-  
-  .footer-copyright {
-    margin-top: 20px;
+  .footer_copyright {
     font-size: 14px;
+    color: white;
+    text-align: center;
   }
   

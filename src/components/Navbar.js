@@ -21,7 +21,7 @@ const Dropdown = ({ isOpen, toggleDropdown, children }) => {
     return (
         <div ref={dropdownRef}>
             {isOpen && (
-                <div className={`dropdown-menu ${isOpen ? "show" : ""}`}>
+                <div className={`dropdown-menu ${isOpen ? 'show' : ''}`}>
                     {children}
                 </div>
             )}
@@ -38,6 +38,8 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
     const toggleDropdown1 = () => setDropdownOpen1((prev) => !prev);
     const toggleDropdown2 = () => setDropdownOpen2((prev) => !prev);
     const toggleDropdown3 = () => setDropdownOpen3((prev) => !prev);
+    const toggleDropdown4 = () => setDropdownOpen4((prev) => !prev);
+
 
     const handleMouseEnter1 = () => setDropdownOpen1(true);
     const handleMouseLeave1 = () => setDropdownOpen1(false);
@@ -52,10 +54,10 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
     const handleMouseLeave4 = () => setDropdownOpen4(false);
 
     return (
-        <div className="navbar-container">
-            <div className="header">
-                <div className="logo">My Logo</div>
-                <div className="contact-info">
+        <div className='navbar-container'>
+            <div className='header'>
+                <div className='logo'>My Logo</div>
+                <div className='contact-info'>
                     <br/>
                     <span>| Opening Hours: 9am - 5pm |</span>
                     <br/>
@@ -65,52 +67,52 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
                     <br/>
                 </div>
             </div>
-            <nav className="navbar">
+            <nav className='navbar'>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
+                    <li><Link to='/'>Home</Link></li>
                     <li onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
-                        <Link to="#" className="dropdown-toggle" onClick={toggleDropdown1} aria-haspopup="true" aria-expanded={dropdownOpen1}>
+                        <Link to='#' className='dropdown-toggle' onClick={toggleDropdown1} aria-haspopup='true' aria-expanded={dropdownOpen1}>
                             Adopt animals
                         </Link>
                         <Dropdown isOpen={dropdownOpen1} toggleDropdown={setDropdownOpen1}>
-                            <Link to="/dog">Dogs</Link>
-                            <Link to="/cat">Cats</Link>
+                            <Link to='/dog'>Dogs</Link>
+                            <Link to='/cat'>Cats</Link>
                         </Dropdown>
                     </li>
-                    <li><Link to="/release_pet">Release Pet</Link></li>
+                    <li><Link to='/release_pet'>Release Pet</Link></li>
                     <li onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseLeave3}>
-                        <Link to="#" className="dropdown-toggle" onClick={toggleDropdown3} aria-haspopup="true" aria-expanded={dropdownOpen3}>
+                        <Link to='#' className='dropdown-toggle' onClick={toggleDropdown3} aria-haspopup='true' aria-expanded={dropdownOpen3}>
                             Ways to help
                         </Link>
                         <Dropdown isOpen={dropdownOpen3} toggleDropdown={setDropdownOpen3}>
-                            <Link to="/Donate">Donate</Link>
-                            <Link to="/Volunteer">Volunteer</Link>
+                            <Link to='/Donate'>Donate</Link>
+                            <Link to='/Volunteer'>Volunteer</Link>
                         </Dropdown>
                     </li>
                     <li onMouseEnter={handleMouseEnter4} onMouseLeave={handleMouseLeave4}>
-                        <Link to="#" className="dropdown-toggle" onClick={toggleDropdown3} aria-haspopup="true" aria-expanded={dropdownOpen3}>
+                        <Link to='#' className='dropdown-toggle' onClick={toggleDropdown4} aria-haspopup='true' aria-expanded={dropdownOpen4}>
                             About us
                         </Link>
                         <Dropdown isOpen={dropdownOpen4} toggleDropdown={setDropdownOpen4}>
-                            <Link to="/Contact">Contact Us</Link>
-                            <Link to="/Mission">Mission/Purpose</Link>
+                            <Link to='/Contact'>Contact Us</Link>
+                            <Link to='/Mission'>Mission/Purpose</Link>
                         </Dropdown>
                     </li>
 
                     {isLoggedIn && (
                         <li onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
-                            <Link to="#" className="dropdown-toggle" onClick={toggleDropdown2} aria-haspopup="true" aria-expanded={dropdownOpen2}>
+                            <Link to='#' className='dropdown-toggle' onClick={toggleDropdown2} aria-haspopup='true' aria-expanded={dropdownOpen2}>
                                 {username}
                             </Link>
 
                         </li>
                     )}
 
-                    {!isLoggedIn && <li><Link to="/login">Login</Link></li>}
-                    {!isLoggedIn && <li><Link to="/register">Sign Up</Link></li>}
+                    {!isLoggedIn && <li><Link to='/login'>Login</Link></li>}
+                    {!isLoggedIn && <li><Link to='/register'>Sign Up</Link></li>}
                     {isLoggedIn && (
                         <li>
-                            <Link to="#" onClick={handleLogout} className="logout-button">Logout</Link>
+                            <Link to='#' onClick={handleLogout} className='logout-button'>Logout</Link>
                         </li>
                     )}
                 </ul>

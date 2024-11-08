@@ -31,10 +31,10 @@ const ShowDog = () => {
 
                 return (
                     <div key={dog.id} onClick={handleImageClick} style={{ cursor: 'pointer' }}>
-                    <div className="dog_card">
-                      <img className="dog_image" src={dog.url} alt={breed.name || 'Dog Image'} />
-                      <h2 className="breed-name">Breed Type: {breed.name || 'Unknown Breed'}</h2>
-                      <p className="breed-temperament">Temperament: {breed.temperament || 'Unknown temperament'}</p>
+                    <div className='dog_card'>
+                      <img className='dog_image' src={dog.url} alt={breed.name || 'Dog Image'} />
+                      <h2 className='breed-name'>Breed Type: {breed.name || 'Unknown Breed'}</h2>
+                      <p className='breed-temperament'>Temperament: {breed.temperament || 'Unknown temperament'}</p>
                     </div>
                   </div>
                 );

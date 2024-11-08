@@ -62,17 +62,17 @@ const Home = ({ isLoggedIn }) => {
           <h3>More Information</h3>
         </div>
         {isDropdownOpen1 && (
-          <div className="dropdown_content">
+          <div className='dropdown_content'>
             <p>Here is some additional information that expands when the header is clicked. You can customize this content as needed.</p>
           </div>
         )}
       </div>
-      <div className="container_dropdown" style={{ width: '90%' }}>
-        <div className="header_drop" onClick={toggleDropdown2}>
+      <div className='container_dropdown' style={{ width: '90%' }}>
+        <div className='header_drop' onClick={toggleDropdown2}>
           <h3>More Information</h3>
         </div>
         {isDropdownOpen2 && (
-          <div className="dropdown_content">
+          <div className='dropdown_content'>
             <p>Here is some additional information that expands when the header is clicked. You can customize this content as needed.</p>
           </div>
         )}
