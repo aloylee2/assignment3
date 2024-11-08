@@ -42,16 +42,15 @@
     color: #fff; 
     text-decoration: none; 
     padding: 10px 15px; 
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .navbar a:hover {
     background-color: #555; 
-    color: #ffd700; /* Change text color on hover for better contrast */
-    border-radius: 4px; /* Optional: rounded corners on hover */
+    color: #ffd700; 
+    border-radius: 4px; 
 }
 
-/* Base Dropdown Menu Styles */
 .dropdown-menu {
     display: none; 
     position: absolute; 
@@ -62,25 +61,24 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Show dropdown when open */
+
 .dropdown-menu.show {
     display: block; 
 }
 
-/* Dropdown Links */
+
 .dropdown-menu a {
     color: #fff; 
     padding: 10px 15px; 
     text-decoration: none; 
     display: block; 
-    transition: background-color 0.3s ease; /* Smooth transition for dropdown links */
+    transition: background-color 0.3s ease; 
 }
 
 .dropdown-menu a:hover {
-    background-color: #666; /* Darker background for dropdown items */
+    background-color: #666; 
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .header {
         flex-direction: column; 
@@ -89,7 +87,7 @@
     .contact-info {
         color: #fff;
         display: flex;
-        flex-direction: column; /* Stack contact items vertically */
+        flex-direction: column; 
         gap: 5px;
     }
     
@@ -100,7 +98,7 @@
     }
 
     .navbar li {
-        margin: 10px 0; /* Adjust margin for vertical spacing on mobile */
+        margin: 10px 0; 
     }
 
     .navbar ul {
