@@ -1,4 +1,3 @@
-// src/AdoptionForm.js
 import React, { useRef } from 'react';
 import { useLocation,useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
@@ -28,7 +27,7 @@ const AdoptionForm = () => {
         })
         .catch((error) => {
             console.error('Error:', error.text);
-            alert('Something went wrong with the application adoption. Please try again.');
+            alert('Something went wrong with the adoption application. Please try again.');
         });
     };
 
