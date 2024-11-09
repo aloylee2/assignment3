@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #3e547c;
 }
 
 .logo {
@@ -22,7 +22,8 @@
 .navbar {
     display: flex;
     justify-content: center; 
-    background-color: #444; 
+    background-color: #3e547c; 
+    border:solid black 1px;
     padding: 30px 0; 
     width: 100%;
 }

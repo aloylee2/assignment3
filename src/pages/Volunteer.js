@@ -44,7 +44,7 @@ const Volunteer = ({isLoggedIn}) => {
       <img src={cleaning} alt='volunteer' className='dog_image'/>
      </div>
      <div className='gallery_text'>
-      <h2>Cleaning</h2>
+      <h3 className='cleaning'>Cleaning</h3>
           <p>Information on cleaning.........</p>
               <Button
               label='Register'
@@ -70,7 +70,7 @@ const Volunteer = ({isLoggedIn}) => {
       <img src={grooming} alt='volunteer' className='dog_image'/>
      </div>
      <div className='gallery_text'>
-      <h2>Grooming animal</h2>
+      <h3 className='grooming'>Grooming animal</h3>
           <p>Information on Grooming.........</p>
               <Button
               label='Register'

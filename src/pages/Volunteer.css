@@ -64,3 +64,18 @@
       opacity: 1;
     }
   }
+
+  @media (max-width: 768px) {
+    .volunteer_gallery {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .volunteer_gallery {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+}

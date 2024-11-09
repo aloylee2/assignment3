@@ -56,7 +56,7 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
     return (
         <div className='navbar-container'>
             <div className='header'>
-                <div className='logo'>My Logo</div>
+                <div className='logo'><strong><i>Pet Haven</i></strong></div>
                 <div className='contact-info'>
                     <br/>
                     <span>| Opening Hours: 9am - 5pm |</span>

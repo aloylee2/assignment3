@@ -36,7 +36,7 @@ const Home = ({ isLoggedIn }) => {
           )}
            <Button
               label='Learn More'
-              onClick={() => (window.location.href = '/About')}
+              onClick={() => (window.location.href = '/Mission')}
               className='join_us_button'
             />
         </div>
