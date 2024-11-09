@@ -44,6 +44,7 @@ const App = () => {
           <Route path='/dog' element={<ShowDog />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login onLogin={handleLogin} />} />
+          <Route path='/assignment3' element={<Home isLoggedIn={loggedIn} username={username} />} />  {/* Pass username to Home */}
           <Route path='/' element={<Home isLoggedIn={loggedIn} username={username} />} />  {/* Pass username to Home */}
           <Route path='/adopt-animal' element={<AdoptAnimalForm isLoggedIn={loggedIn} loggedInUsername={username} />}/> 
           <Route path='/adoption-form' element={<AdoptionForm />} />

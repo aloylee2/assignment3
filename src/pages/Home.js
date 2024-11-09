@@ -7,6 +7,7 @@ import heroBanner from '../images/hero_banner.jpg';
 import gallery from '../images/dog_gallery.avif';
 import YouTubeVideo from '../components/Video';
 import FeedbackSlideshow from './Feedback';
+import { Link } from 'react-router-dom';
 
 
 
@@ -30,13 +31,13 @@ const Home = ({ isLoggedIn }) => {
           {!isLoggedIn && (
             <Button
               label='Join Us'
-              onClick={() => (window.location.href = '/register')}
+              onClick={() => <Link to="/register">Register</Link>}
               className='about_button'
             />
           )}
            <Button
               label='Learn More'
-              onClick={() => (window.location.href = '/Mission')}
+              onClick={() => <Link to="/Mission">Mission</Link>}
               className='join_us_button'
             />
         </div>
@@ -53,7 +54,7 @@ const Home = ({ isLoggedIn }) => {
           </p>
               <Button
               label='View Gallery'
-              onClick={() => (window.location.href = '/view_gallery')}
+              onClick={() => <Link to="/view_gallery">View Gallery</Link>}
               className='gallery_button'
             />
      </div>

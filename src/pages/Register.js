@@ -28,16 +28,19 @@ const Register = () => {
       <input type='text' 
       placeholder='Username' 
       className='username'
+      required
       value={username} onChange={(e) => setUsername(e.target.value)} />
       <label>Email:</label>
       <input type='text' 
       placeholder='Email' 
       className='email'
+      required
       value={email} onChange={(e) => setEmail(e.target.value)} />
       <label>Password:</label>
       <input type='password' 
       placeholder='Password'
       className='password' 
+      required
       value={password} onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleRegister}>Register</button>
     </div>
