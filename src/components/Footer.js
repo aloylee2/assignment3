@@ -9,7 +9,7 @@ function Footer() {
         <div className='footer'>
           <h4 className='footer_heading'>Quick Links</h4>
           <ul className='footer_1'>
-            <li><Link to='/about' className='footer_link'>About Us</Link></li>
+            <li><Link to='/Mission' className='footer_link'>About Us</Link></li>
             <li><Link to='/view_gallery' className='footer_link'>View pet</Link></li>
             <li><Link to='/Volunteer' className='footer_link'>Volunteer</Link></li>
             <li><Link to='/Donate' className='footer_link'>Donate</Link></li>

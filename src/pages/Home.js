@@ -15,7 +15,7 @@ const Home = ({ isLoggedIn }) => {
   const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
   const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
   const navigate = useNavigate();
-  
+
   const toggleDropdown1 = () => {
     setIsDropdownOpen1(!isDropdownOpen1);
   };
@@ -76,11 +76,14 @@ const Home = ({ isLoggedIn }) => {
       </div>
       <div className='container_dropdown' style={{ width: '90%' }}>
         <div className='header_drop' onClick={toggleDropdown2}>
-          <h3>More Information on volunteering</h3>
+          <h3>More Information on Facilities</h3>
         </div>
         {isDropdownOpen2 && (
           <div className='dropdown_content'>
-            <p>Infomation on being a volunteer....</p>
+            <p><strong>Adoption Center:</strong> A safe and welcoming space where potential adopters can meet and interact with our animals to find their perfect match.</p>
+            <p><strong>Animal Clinic:</strong> Our in-house veterinary clinic offers medical care, vaccinations, and spay/neuter services for all our rescued animals before they are adopted.</p>
+            <p><strong>Foster Care Program:</strong> We partner with foster families to provide temporary homes for pets, giving them a chance to heal and socialize in a home environment before finding their forever homes.</p>
+            <p><strong>Play Area:</strong> A dedicated space for exercise and socialization where our animals can play, relax, and enjoy the outdoors under supervised care.</p>
           </div>
         )}
       </div>

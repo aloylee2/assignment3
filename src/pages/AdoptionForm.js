@@ -59,7 +59,7 @@ const AdoptionForm = () => {
                 </label>
                 <label>
                     Contact Number:
-                    <input type='tel' name='user_contact' className='number' placeholder='Enter your contact number' required />
+                    <input type='tel' name='user_contact' className='number'  maxlength="8"  placeholder='Enter your contact number' required />
                 </label>
                 <button type='submit'>Submit Adoption</button>
             </form>

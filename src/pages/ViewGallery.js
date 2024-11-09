@@ -22,7 +22,7 @@ const ViewGallery = () => {
 
   return (
     <div className='gallery-container'>
-      <h2>View Our Adorable Cats and Dogs</h2>
+      <h2>Social Media For Our Adorable Cats and Dogs</h2>
       <div className='image-grid'>
         {catImages.map((cat, index) => (
           <img key={`cat-${index}`} src={cat.url} alt='Cat' className='animal-image' />
