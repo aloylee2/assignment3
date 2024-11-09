@@ -26,5 +26,8 @@
   }
   
   @media (max-width: 480px) {
+    .video {
+      max-width: 300px;
+  }
   }
   
