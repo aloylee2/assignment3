@@ -12,3 +12,25 @@ label {
     border-radius: 6px;
     font-size: 15px;
 }
+.release_pet{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 10px; 
+  box-sizing: border-box; 
+}
+@media (max-width: 768px) {
+  .release_petn {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .release_pet {
+    max-width: 400px;
+  }
+}

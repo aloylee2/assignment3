@@ -29,7 +29,7 @@ import './ReleasePet.css'
       };
     
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div className='release_pet'>
       <h2>Release a pet into the society</h2>
 
 <ReusableForm fields={contactFields} onSubmit={handleContactSubmit} />

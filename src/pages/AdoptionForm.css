@@ -17,4 +17,16 @@
     border-radius: 6px;
     font-size: 15px;
   }
+
+.adoptform{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 10px; /* Adjust padding to only apply left and right */
+  box-sizing: border-box; /* Ensure padding does not affect the width */
+}
   

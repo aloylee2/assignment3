@@ -32,7 +32,7 @@ const AdoptionForm = () => {
     };
 
     return (
-        <div >
+        <div className='adoptform'>
             <h2 style={{textAlign:'center'}}>Adoption Form</h2>
             <h3 style={{textAlign:'center'}}>Thank you applying to adopt a {animalType}</h3>
             <div className='AnimalImage'>
