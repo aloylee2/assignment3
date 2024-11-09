@@ -7,14 +7,15 @@ import heroBanner from '../images/hero_banner.jpg';
 import gallery from '../images/dog_gallery.avif';
 import YouTubeVideo from '../components/Video';
 import FeedbackSlideshow from './Feedback';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Home = ({ isLoggedIn }) => {
   const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
   const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
-
+  const navigate = useNavigate();
+  
   const toggleDropdown1 = () => {
     setIsDropdownOpen1(!isDropdownOpen1);
   };
@@ -31,13 +32,13 @@ const Home = ({ isLoggedIn }) => {
           {!isLoggedIn && (
             <Button
               label='Join Us'
-              onClick={() => <Link to="/register">Register</Link>}
+              onClick={() =>navigate('/register') }
               className='about_button'
             />
           )}
            <Button
               label='Learn More'
-              onClick={() => <Link to="/Mission">Mission</Link>}
+              onClick={() => navigate('/Mission')}
               className='join_us_button'
             />
         </div>
@@ -54,7 +55,7 @@ const Home = ({ isLoggedIn }) => {
           </p>
               <Button
               label='View Gallery'
-              onClick={() => <Link to="/view_gallery">View Gallery</Link>}
+              onClick={() => navigate('/view_gallery')}
               className='gallery_button'
             />
      </div>
