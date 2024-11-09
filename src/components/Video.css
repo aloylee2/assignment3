@@ -22,12 +22,15 @@
   @media (max-width: 768px) {
     .video {
         max-width: 400px;
+        margin-bottom: 5px;
     }
   }
   
   @media (max-width: 480px) {
     .video {
       max-width: 300px;
+      margin-bottom: 5px;
+      
   }
   }
   
