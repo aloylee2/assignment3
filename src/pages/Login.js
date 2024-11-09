@@ -8,7 +8,8 @@ const Login = ({ onLogin }) => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
     const user = existingUsers.find(user => user.username === username && user.password === password);
 

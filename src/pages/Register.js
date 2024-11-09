@@ -1,12 +1,15 @@
 // src/Register.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
-  const handleRegister = () => {
+  const handleRegister = (e) => {
+    e.preventDefault();
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
     const userExists = existingUsers.some(
       (user) => user.username === username || user.email === email
@@ -16,6 +19,7 @@ const Register = () => {
       existingUsers.push({ username, password, email });
       localStorage.setItem('users', JSON.stringify(existingUsers));
       alert('Registration successful!');
+      navigate('/login');
     } else {
       alert('User already exists!');
     }
