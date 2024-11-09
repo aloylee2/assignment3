@@ -15,6 +15,7 @@ import ContactUs from './pages/ContactUs';
 import ReleasePet from './pages/ReleasePet';
 import Donation from './pages/Donation';
 import Volunteer from './pages/Volunteer';
+import Mission_Purpose from './pages/Mission_Purpose';
 
 
 
@@ -43,14 +44,15 @@ const App = () => {
           <Route path='/dog' element={<ShowDog />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login onLogin={handleLogin} />} />
-          <Route path='/' element={<Home username={username} />} />  {/* Pass username to Home */}
+          <Route path='/' element={<Home isLoggedIn={loggedIn} username={username} />} />  {/* Pass username to Home */}
           <Route path='/adopt-animal' element={<AdoptAnimalForm isLoggedIn={loggedIn} loggedInUsername={username} />}/> 
           <Route path='/adoption-form' element={<AdoptionForm />} />
           <Route path='/view_gallery' element={<ViewGallery />} />
           <Route path='/Contact' element={<ContactUs/>}/>
           <Route path='/release_pet' element={<ReleasePet isLoggedIn={loggedIn} loggedInUsername={username}/>}/>
           <Route path='/Donate' element={<Donation isLoggedIn={loggedIn} loggedInUsername={username}/>}/>
-          <Route path='/Volunteer' element={<Volunteer/>}/>
+          <Route path='/Volunteer' element={<Volunteer isLoggedIn={loggedIn} loggedInUsername={username}/>}/>
+          <Route path='/Mission' element={<Mission_Purpose />} />
         </Routes>
       <Footer/>
     </Router>

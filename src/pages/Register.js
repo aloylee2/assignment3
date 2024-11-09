@@ -4,13 +4,16 @@ import React, { useState } from 'react';
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleRegister = () => {
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const userExists = existingUsers.find(user => user.username === username);
+    const userExists = existingUsers.some(
+      (user) => user.username === username || user.email === email
+    );
 
     if (!userExists) {
-      existingUsers.push({ username, password });
+      existingUsers.push({ username, password, email });
       localStorage.setItem('users', JSON.stringify(existingUsers));
       alert('Registration successful!');
     } else {
@@ -26,6 +29,11 @@ const Register = () => {
       placeholder='Username' 
       className='username'
       value={username} onChange={(e) => setUsername(e.target.value)} />
+      <label>Email:</label>
+      <input type='text' 
+      placeholder='Email' 
+      className='email'
+      value={email} onChange={(e) => setEmail(e.target.value)} />
       <label>Password:</label>
       <input type='password' 
       placeholder='Password'

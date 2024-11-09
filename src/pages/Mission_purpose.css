@@ -1,0 +1,22 @@
+.mission-purpose {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .mission-purpose h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .mission-purpose h3 {
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  .mission-purpose p {
+    color: #666;
+    line-height: 1.6;
+  }
+  

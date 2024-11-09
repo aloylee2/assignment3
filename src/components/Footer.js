@@ -17,8 +17,8 @@ function Footer() {
         </div>      
         <div className='footer'>
           <h4 className='footer_heading'>Contact Us</h4>
-          <p className='footer_contact'>Email: pethaven.com</p>
-          <p className='footer_contact'>Phone: 81234567</p>
+          <p className='footer_contact'>Email: info@example.com</p>
+          <p className='footer_contact'>Phone: (123) 456-7890</p>
           <p className='footer_contact'>Location: 123 pet haven st.</p>
         </div>
         <div className='footer'>

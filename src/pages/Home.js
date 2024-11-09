@@ -39,23 +39,22 @@ const Home = ({ isLoggedIn }) => {
             />
         </div>
       </div>
+
       <div className='adopt_gallery'>
-  
      <div className='dog_image_gallery'>
       <img src={gallery} alt=' Gallery' className='dog_image'/>
      </div>
      <div className='gallery_text'>
       <h2>Gallery Pets</h2>
-          <p>Thank you for your interest in adopting an animal! All visits are now by appointment only and slots will only be released 7 days beforehand. Book an appointment here.
-
-              If you are looking for a missing pet, please visit our lost & found page.</p>
+          <p>Thank you for your interest in adopting an animal! All visits will not be allowed and we will contact you instead throught email. Thanks for underatanding.
+            Click the button above to see our pets in action.
+          </p>
               <Button
               label='View Gallery'
               onClick={() => (window.location.href = '/view_gallery')}
               className='gallery_button'
             />
      </div>
-     
       </div>
       <div className='container_dropdown' style={{ width: '90%' }}>
         <div className='header_drop' onClick={toggleDropdown1}>

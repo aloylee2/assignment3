@@ -16,7 +16,7 @@ const AdoptAnimalForm = ({ isLoggedIn, loggedInUsername }) => {
     const navigate = useNavigate();
 
     const handleAdoptClick = () => {
-        console.log('User logged in status:', isLoggedIn); // Debugging line
+        console.log('User logged in status:', isLoggedIn); 
         if (!isLoggedIn) {
             alert('Not logged in. Unable to adopt.');
             navigate('/login')
