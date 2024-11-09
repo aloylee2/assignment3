@@ -22,6 +22,11 @@
     font-size: 1rem;
     color: #555;
   }
+  .animalrescue,.animalhome,.money{
+    height: 100px;
+    width: 100px;
+
+  }
   
   /* Optional: Responsive styles */
   @media (max-width: 600px) {

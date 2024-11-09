@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Volunteer.css';
 import { useNavigate } from 'react-router-dom';
-import gallery from '../images/dog_gallery.avif';
+import cleaning from '../images/volunteer_cleaning.avif';
 import Button from '../components/Button';
+import grooming from '../images/volunteer_grooming.jpg';
  
 const Volunteer = ({isLoggedIn}) => {
 
@@ -40,13 +41,11 @@ const Volunteer = ({isLoggedIn}) => {
           <div className='volunteer_dropdown_content'>
              <div className='volunteer_gallery'>
      <div className='volunteer_dog_image_gallery'>
-      <img src={gallery} alt='volunteer' className='dog_image'/>
+      <img src={cleaning} alt='volunteer' className='dog_image'/>
      </div>
      <div className='gallery_text'>
-      <h2>Gallery Pets</h2>
-          <p>Thank you for your interest in adopting an animal! All visits are now by appointment only and slots will only be released 7 days beforehand. Book an appointment here.
-
-              If you are looking for a missing pet, please visit our lost & found page.</p>
+      <h2>Cleaning</h2>
+          <p>Information on cleaning.........</p>
               <Button
               label='Register'
               onClick={handleButton1Click}
@@ -60,7 +59,7 @@ const Volunteer = ({isLoggedIn}) => {
 
     <div className='volunteer_container_dropdown'>
         <div className='volunteer_header_dropdown' onClick={toggleDropdown2}>
-            <h3 style={{margin:0,fontsize:'1.2rem'}}>Click here if you want to help in cleaning the pet home</h3>
+            <h3 style={{margin:0,fontsize:'1.2rem'}}>Click here if you want to help in grooming the pet</h3>
         </div>
         {isDropdownOpen2 && (
           <div className='volunteer_dropdown_content'>
@@ -68,13 +67,11 @@ const Volunteer = ({isLoggedIn}) => {
           <div className='volunteer_dropdown_content'>
              <div className='volunteer_gallery'>
      <div className='volunteer_dog_image_gallery'>
-      <img src={gallery} alt='volunteer' className='dog_image'/>
+      <img src={grooming} alt='volunteer' className='dog_image'/>
      </div>
      <div className='gallery_text'>
-      <h2>Gallery Pets</h2>
-          <p>Thank you for your interest in adopting an animal! All visits are now by appointment only and slots will only be released 7 days beforehand. Book an appointment here.
-
-              If you are looking for a missing pet, please visit our lost & found page.</p>
+      <h2>Grooming animal</h2>
+          <p>Information on Grooming.........</p>
               <Button
               label='Register'
               onClick={handleButton1Click}

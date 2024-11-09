@@ -7,46 +7,41 @@ const MissionPurpose = () => {
       <section>
         <h3>Why We Do What We Do</h3>
         <p>
-          At <strong>Pet Adopt</strong>, we believe every animal deserves a loving home. 
-          Our mission is simple: to connect adorable, loving cats and dogs with people 
-          ready to welcome them into their lives. We know that adopting a pet isn’t 
-          just about giving an animal a home — it’s about finding your new best friend, 
-          your cuddle buddy, and a family member who will love you unconditionally.
+        Every animal deserves a loving home, in our opinion at Pet Adopt. 
+          Our goal is straightforward: to pair those who are prepared to adopt cute, devoted dogs and cats with those who are ready to adopt them. We are aware that adopting a pet is it. 
+
+          Discovering your new best friend is more important than simply providing a home for an animal. 
+
+          a family member who will love you without conditions, as well as your cuddling partner.
+
+
         </p>
       </section>
 
       <section>
         <h3>Our Purpose</h3>
         <p>
-          Our purpose goes beyond just matching pets to people. We want to create a 
-          community where every furry friend gets the love, care, and forever home they deserve. 
-          Whether you're a first-time pet owner or a seasoned animal lover, we’re here to 
-          help you find a perfect match.
-        </p>
-        <p>
-          We work closely with shelters, foster homes, and rescue groups to ensure every 
-          pet has a chance at a happy life. Our team is passionate about making adoption easy, 
-          fun, and stress-free because finding your new best friend should be a joyful experience!
+        We are here for more than just linking humans with dogs. Every animal friend should receive the love, attention, and forever home they deserve in the community we hope to establish. 
+          Regardless of your level of experience with animals, we can assist you in finding the ideal companion.
+
         </p>
       </section>
 
       <section>
         <h3>Why Adopt?</h3>
         <p>
-          Adopting a pet isn't just an act of kindness; it's the beginning of a beautiful 
-          journey filled with wagging tails, purring cuddles, and unconditional love. 
-          Every adoption helps us continue our mission, saving more lives and spreading more joy. 
-          When you choose to adopt, you’re giving an animal a second chance and freeing up space 
-          for more rescues to find their way to safety.
+        Getting a pet is more than just a gesture of generosity; it's the start of an amazing adventure full of purring cuddles, wagging tails, and unwavering love. 
+          Our goal of saving more lives and bringing joy to more people is furthered by each adoption. 
+          Giving an animal a second opportunity and creating room for more rescues to find safety are two benefits of adopting your pet.
+
         </p>
       </section>
 
       <section>
         <h3>Join Us in Making a Difference</h3>
         <p>
-          Whether you’re looking to adopt, foster, donate, or volunteer, you’re helping us 
-          make a difference in the lives of these incredible animals. Let's work together 
-          to give every pet a loving home and every person a furry friend who will bring endless joy.
+        Whether you choose to volunteer, adopt, foster, or give, you are assisting us in improving the lives of these amazing creatures. Together, let's make sure that every pet has a loving home and that everyone has a furry buddy who will make them happy forever.
+
         </p>
       </section>
     </div>
