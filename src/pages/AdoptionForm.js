@@ -32,7 +32,7 @@ const AdoptionForm = () => {
     };
 
     return (
-        <div className='adoption_form_container'>
+        <div >
             <h2 style={{textAlign:'center'}}>Adoption Form</h2>
             <h3 style={{textAlign:'center'}}>Thank you applying to adopt a {animalType}</h3>
             <div className='AnimalImage'>
@@ -51,15 +51,15 @@ const AdoptionForm = () => {
 
                 <label>
                     Your Name:
-                    <input type='text' name='user_name' placeholder='Enter your name' required />
+                    <input type='text' name='user_name' className='name' placeholder='Enter your name' required />
                 </label>
                 <label>
                     Your Address:
-                    <input type='text' name='user_address' placeholder='Enter your address' required />
+                    <input type='text' name='user_address' className='address' placeholder='Enter your address' required />
                 </label>
                 <label>
                     Contact Number:
-                    <input type='tel' name='user_contact' placeholder='Enter your contact number' required />
+                    <input type='tel' name='user_contact' className='number' placeholder='Enter your contact number' required />
                 </label>
                 <button type='submit'>Submit Adoption</button>
             </form>

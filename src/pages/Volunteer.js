@@ -64,7 +64,7 @@ const Volunteer = ({isLoggedIn}) => {
         </div>
         {isDropdownOpen2 && (
           <div className='volunteer_dropdown_content'>
-            {isDropdownOpen1 && (
+            {isDropdownOpen2 && (
           <div className='volunteer_dropdown_content'>
              <div className='volunteer_gallery'>
      <div className='volunteer_dog_image_gallery'>

@@ -1,13 +1,23 @@
-.credit,.method,.amount{
+.donation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
   width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #bdc3c7;
-  border-radius: 6px;
-  font-size: 15px;
+  margin: 0 auto;
+  padding: 20px 10px; 
+  box-sizing: border-box; 
 }
-  
 
- 
-  
-  
+@media (max-width: 768px) {
+  .donation {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .donation {
+    max-width: 400px;
+  }
+}

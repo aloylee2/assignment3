@@ -64,7 +64,7 @@ const Donation = ({ isLoggedIn}) => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px' }}>
+    <div className='donation'>
       <h2>Make a Donation</h2>
 
       <ReusableForm
