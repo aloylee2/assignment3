@@ -54,8 +54,8 @@ const AdoptionForm = () => {
                     <input type='text' name='user_name' className='name' placeholder='Enter your name' required />
                 </label>
                 <label>
-                    Your Address:
-                    <input type='text' name='user_address' className='address' placeholder='Enter your address' required />
+                    Your Email Address:
+                    <input type='email' name='user_address' className='address' placeholder='Enter your address' required />
                 </label>
                 <label>
                     Contact Number:
