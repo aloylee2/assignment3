@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Resource from './Resource';
+import Loader from '../components/Loader';
 
 
 const ShowDog = () => {
@@ -9,7 +10,7 @@ const ShowDog = () => {
     const navigate = useNavigate();
 
     const render = (data) => {
-        if (data.loading) return <p>Loading...</p>;
+        if (data.loading) return <Loader/>;
         if (data.error) return <p>Error loading data</p>;
 
         return data.trans

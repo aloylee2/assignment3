@@ -1,5 +1,6 @@
 import Resource from './Resource';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../components/Loader';
 
 const ShowCat = () => {
   const API_KEY = 'live_8kDRkKIA0PLZz2JMNvjE1LHQakFW8eWnPVx5olD2EhHIEEpMJw6AuDh5HpqmLnJS';
@@ -7,7 +8,7 @@ const ShowCat = () => {
   const navigate = useNavigate();
 
   const render = (data) => {
-        if (data.loading) return <p>Loading...</p>;
+        if (data.loading) return <Loader/>;
         if (data.error) return <p>Error loading data</p>;
 
         return data.trans
