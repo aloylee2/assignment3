@@ -9,6 +9,7 @@ import YouTubeVideo from '../components/Video';
 import FeedbackSlideshow from './Feedback';
 import { useNavigate } from 'react-router-dom';
 import AnimalPreview from './AnimalPreview';
+import Loader from '../components/Loader';
 
 
 
@@ -101,7 +102,6 @@ const Home = ({ isLoggedIn }) => {
         }}>Adoption Feedback</h3>
         <FeedbackSlideshow/>
       </div>
-     
     </div>
   );
 };

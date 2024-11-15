@@ -1,0 +1,51 @@
+/* Loader.css */
+
+/* Loader container */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    width: 100vw; /* Full screen width */
+    background-color: rgba(0, 0, 0, 0.05); /* Slight background overlay */
+  }
+  
+
+  .loader{
+    width: 80%;
+    max-width:auto;
+    height: 10px;
+    background-color: #e0e0e0; 
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .loader::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 40%;
+    background:  #3498db;
+    animation: loading 2s ease-in;
+    animation-iteration-count:infinite;
+  }
+  
+ 
+  @keyframes loading {
+    0% {
+      left: -50%;
+      width: 50%;
+    }
+    50% {
+      left: 25%;
+      width: 75%;
+    }
+    100% {
+      left: 100%;
+      width: 50%;
+    }
+  }
+  
