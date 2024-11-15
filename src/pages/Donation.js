@@ -66,7 +66,8 @@ const Donation = ({ isLoggedIn}) => {
   return (
     <div className='donation'>
       <h2>Make a Donation</h2>
-
+      <h3 style={{textAlign:'center',color:'red'}}>Please login before filling the form!</h3>
+      <br/>
       <ReusableForm
         fields={fields}
         onSubmit={handleFormSubmit}

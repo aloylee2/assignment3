@@ -31,6 +31,7 @@ import './ReleasePet.css'
   return (
     <div className='release_pet'>
       <h2>Release a pet into the society</h2>
+      <h3 style={{textAlign:'center',color:'red'}}>Please login before filling the form!</h3>
 
 <ReusableForm fields={contactFields} onSubmit={handleContactSubmit} />
     </div>

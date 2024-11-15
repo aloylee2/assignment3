@@ -38,7 +38,7 @@ const Counter = () => {
         <img src={animalrescue} alt=' animalrescue' className='animalrescue'/>
         </div>
         <div className='counter-value'>
-          {isVisible && <CountUp start={0} end={120} duration={2} />}
+          {isVisible && <CountUp start={0} end={120} duration={2} />}++
         </div>
         <div className='counter-label'>Animal Rescue</div>
       </div>
@@ -47,7 +47,7 @@ const Counter = () => {
         <img src={animalhome} alt=' animalhome' className='animalhome'/>
         </div>
         <div className='counter-value'>
-          {isVisible && <CountUp start={0} end={75} duration={2} />}
+          {isVisible && <CountUp start={0} end={75} duration={2} />}++
         </div>
         <div className='counter-label'>Found Home for Animal</div>
       </div>
@@ -57,7 +57,7 @@ const Counter = () => {
         <img src={money} alt=' money' className='money'/>
         </div>
         <div className='counter-value'>
-          {isVisible && <CountUp start={0} end={5000} duration={2} />}
+          {isVisible && <CountUp start={0} end={5000} duration={2} />}++
         </div>
         <div className='counter-label'>Donation Amount ($)</div>
       </div>

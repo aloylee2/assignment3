@@ -1,0 +1,61 @@
+/* Wrapper for Animal Previews */
+.animal-previews {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;  /* Optional spacing between sections */
+  }
+  
+  /* Individual Animal Card */
+  .animal-card {
+    width: 220px;
+    height:380px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect on Animal Card */
+  .animal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image styling */
+  .animal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  /* Breed Name */
+  .animal-card h3 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Temperament text */
+  .animal-card p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  /* Header for sections (Cats/Dogs) */
+  h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #444;
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }
+  

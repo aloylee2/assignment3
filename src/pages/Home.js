@@ -8,6 +8,7 @@ import gallery from '../images/dog_gallery.avif';
 import YouTubeVideo from '../components/Video';
 import FeedbackSlideshow from './Feedback';
 import { useNavigate } from 'react-router-dom';
+import AnimalPreview from './AnimalPreview';
 
 
 
@@ -87,6 +88,7 @@ const Home = ({ isLoggedIn }) => {
           </div>
         )}
       </div>
+      <AnimalPreview limit={4} />
       <div className='counter'>
       <Counter />
       </div>

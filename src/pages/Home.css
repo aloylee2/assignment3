@@ -173,7 +173,7 @@
 
 @media (max-width: 480px) {
     .hero_image {
-        min-height: 50vh;
+        min-height: 70vh;
     }
 
     .hero_text{
@@ -189,5 +189,8 @@
     }
     .youtube_video{
         margin: 0px;
+      }
+      .feedback{
+        min-height: 60vh;
       }
 }
