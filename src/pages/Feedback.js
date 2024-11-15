@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Feedback.css';
+import profile from '../images/Profile_Picture.png'; 
 
 const FeedbackSlideshow = () => {
  
@@ -7,25 +8,25 @@ const FeedbackSlideshow = () => {
     {
       text: "The service is amazing!",
       name: "Alan Lee",
-      profileImg: "https://via.placeholder.com/50", 
+      profileImg: profile, 
       rating: 5,
     },
     {
       text: "The customer service was outstanding.",
       name: "John Tan",
-      profileImg: "https://via.placeholder.com/50",
+      profileImg: profile,
       rating: 4,
     },
     {
       text: "Adoption was fast. Exceeded my expectations.",
       name: "Harry",
-      profileImg: "https://via.placeholder.com/50",
+      profileImg: profile,
       rating: 5,
     },
     {
       text: "Amazing experience!",
       name: "Denny",
-      profileImg: "https://via.placeholder.com/50",
+      profileImg: profile,
       rating: 3,
     },
   ];
