@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/assignment3/static/css/main.ff775eab.css",
-    "main.js": "/assignment3/static/js/main.da9cdffd.js",
+    "main.css": "/assignment3/static/css/main.092f639a.css",
+    "main.js": "/assignment3/static/js/main.ef9ae058.js",
     "reactPlayerYouTube.js": "/assignment3/static/js/reactPlayerYouTube.63ab5503.chunk.js",
     "reactPlayerSoundCloud.js": "/assignment3/static/js/reactPlayerSoundCloud.a51e3e0d.chunk.js",
     "reactPlayerVimeo.js": "/assignment3/static/js/reactPlayerVimeo.902d05a9.chunk.js",
@@ -18,6 +18,7 @@
     "reactPlayerPreview.js": "/assignment3/static/js/reactPlayerPreview.5efa5ca8.chunk.js",
     "static/js/453.ad32e25e.chunk.js": "/assignment3/static/js/453.ad32e25e.chunk.js",
     "static/media/volunteer_grooming.jpg": "/assignment3/static/media/volunteer_grooming.9d062150c8da1018d3d8.jpg",
+    "static/media/Profile_Picture.png": "/assignment3/static/media/Profile_Picture.db477aa119d9447037f0.png",
     "static/media/dog_gallery.avif": "/assignment3/static/media/dog_gallery.c3104d4db8e31d462086.avif",
     "static/media/hero_banner.jpg": "/assignment3/static/media/hero_banner.eec3d493963b281793d6.jpg",
     "static/media/volunteer_cleaning.avif": "/assignment3/static/media/volunteer_cleaning.184e10bdab1b65bc6fb8.avif",
@@ -25,8 +26,8 @@
     "static/media/pet-house.png": "/assignment3/static/media/pet-house.f771e8ac76a7963ee7fa.png",
     "static/media/donate.png": "/assignment3/static/media/donate.94830a5d17b125443981.png",
     "index.html": "/assignment3/index.html",
-    "main.ff775eab.css.map": "/assignment3/static/css/main.ff775eab.css.map",
-    "main.da9cdffd.js.map": "/assignment3/static/js/main.da9cdffd.js.map",
+    "main.092f639a.css.map": "/assignment3/static/css/main.092f639a.css.map",
+    "main.ef9ae058.js.map": "/assignment3/static/js/main.ef9ae058.js.map",
     "reactPlayerYouTube.63ab5503.chunk.js.map": "/assignment3/static/js/reactPlayerYouTube.63ab5503.chunk.js.map",
     "reactPlayerSoundCloud.a51e3e0d.chunk.js.map": "/assignment3/static/js/reactPlayerSoundCloud.a51e3e0d.chunk.js.map",
     "reactPlayerVimeo.902d05a9.chunk.js.map": "/assignment3/static/js/reactPlayerVimeo.902d05a9.chunk.js.map",
@@ -44,7 +45,7 @@
     "453.ad32e25e.chunk.js.map": "/assignment3/static/js/453.ad32e25e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff775eab.css",
-    "static/js/main.da9cdffd.js"
+    "static/css/main.092f639a.css",
+    "static/js/main.ef9ae058.js"
   ]
 }
