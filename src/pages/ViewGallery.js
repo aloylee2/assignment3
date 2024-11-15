@@ -1,24 +1,36 @@
 // src/pages/ViewGallery.js
 import React, { useEffect, useState } from 'react';
+import Loader from '../components/Loader';
 import './ViewGallery.css';
 
 const ViewGallery = () => {
   const [catImages, setCatImages] = useState([]);
   const [dogImages, setDogImages] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch cat images
-    fetch('https://api.thecatapi.com/v1/images/search?limit=10')
-      .then(response => response.json())
-      .then(data => setCatImages(data))
-      .catch(error => console.error('Error fetching cat images:', error));
+    const fetchImages = async () => {
+      try {
+        const catResponse = await fetch('https://api.thecatapi.com/v1/images/search?limit=10');
+        const catData = await catResponse.json();
+        setCatImages(catData);
 
-    // Fetch dog images
-    fetch('https://api.thedogapi.com/v1/images/search?limit=10')
-      .then(response => response.json())
-      .then(data => setDogImages(data))
-      .catch(error => console.error('Error fetching dog images:', error));
+        const dogResponse = await fetch('https://api.thedogapi.com/v1/images/search?limit=10');
+        const dogData = await dogResponse.json();
+        setDogImages(dogData);
+      } catch (error) {
+        console.error('Error fetching images:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchImages();
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className='gallery-container'>
