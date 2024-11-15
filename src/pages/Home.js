@@ -1,4 +1,3 @@
-// src/pages/Home.js
 import React, { useState } from 'react';
 import './Home.css';
 import Counter from '../components/Counter';
@@ -9,7 +8,7 @@ import YouTubeVideo from '../components/Video';
 import FeedbackSlideshow from './Feedback';
 import { useNavigate } from 'react-router-dom';
 import AnimalPreview from './AnimalPreview';
-import Loader from '../components/Loader';
+
 
 
 

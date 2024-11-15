@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import PetLogo from '../images/Pet_logo.png'
 
 const Dropdown = ({ isOpen, toggleDropdown, children }) => {
     const dropdownRef = useRef(null);
@@ -56,7 +57,9 @@ const Navbar = ({ isLoggedIn, handleLogout, username }) => {
     return (
         <div className='navbar-container'>
             <div className='header'>
-                <div className='logo'><strong><i>Pet Haven</i></strong></div>
+                <div className='logo'>
+                   <img src={PetLogo} className='logo' style={{height:'70px',width:'70px' }}/>
+                </div>
                 <div className='contact-info'>
                     <br/>
                     <span>| Opening Hours: 9am - 5pm |</span>
